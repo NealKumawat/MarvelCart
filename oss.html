@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Source — Point Blank</title>
+  <meta name="description" content="GSoC contributors, LFX scholars, GitHub Externs, and open source projects maintained by Point Blank." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (stats, filter bar, contributor + project cards) -->
+  <link rel="stylesheet" href="oss.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — identical markup to other pages.
+       "active" class moved to the OSS link.
+       ===================================================== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Point Blank
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="oss.html" class="active">OSS</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html">Hustle Results</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+  <div class="page-hero bg-grid">
+    <div class="page-hero-inner">
+      <p class="section-label">// building in the open</p>
+      <h1># Open Source</h1>
+      <p>
+        GSoC contributors, LFX scholars, GitHub Externs, and the projects we
+        maintain — Point Blank's open source story, one pull request at a time.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ── STATS STRIP ──────────────────────────────────
+           Headline numbers for the open source program.
+           ───────────────────────────────────────────────── -->
+      <div class="oss-stats">
+        <div class="oss-stat-card">
+          <div class="oss-stat-num">13+</div>
+          <div class="oss-stat-label">GSoC Contributors</div>
+        </div>
+        <div class="oss-stat-card">
+          <div class="oss-stat-num">3+</div>
+          <div class="oss-stat-label">GSoC Mentors</div>
+        </div>
+        <div class="oss-stat-card">
+          <div class="oss-stat-num">5+</div>
+          <div class="oss-stat-label">LFX Scholars</div>
+        </div>
+        <div class="oss-stat-card">
+          <div class="oss-stat-num">20+</div>
+          <div class="oss-stat-label">Repos Maintained</div>
+        </div>
+      </div>
+
+
+      <!-- ── PROGRAM FILTER BAR ───────────────────────────
+           Filters the contributor grid by program type.
+           ───────────────────────────────────────────────── -->
+      <p class="section-label">// contributors</p>
+      <h2 class="section-title">Our Open Source Contributors</h2>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All Programs</button>
+        <button class="filter-btn" data-filter="gsoc">GSoC</button>
+        <button class="filter-btn" data-filter="lfx">LFX Mentorship</button>
+        <button class="filter-btn" data-filter="extern">GitHub Extern</button>
+        <button class="filter-btn" data-filter="mlh">MLH Fellowship</button>
+      </div>
+
+
+      <!-- ── CONTRIBUTOR GRID ─────────────────────────────
+           Each card has a data-program attribute for filtering.
+           ───────────────────────────────────────────────── -->
+      <div class="contributors-grid" id="contributorsGrid">
+
+        <!-- Contributor 1: GSoC -->
+        <div class="contributor-card" data-program="gsoc">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Ashutosh Pandey</h3>
+                <p class="contributor-org">@ Arduino</p>
+              </div>
+            </div>
+            <span class="tag tag-orange">GSoC</span>
+          </div>
+          <p>Worked on improving the Arduino CLI's board management and library indexing system.</p>
+        </div>
+
+        <!-- Contributor 2: GSoC -->
+        <div class="contributor-card" data-program="gsoc">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Riya Choudhary</h3>
+                <p class="contributor-org">@ CNCF</p>
+              </div>
+            </div>
+            <span class="tag tag-orange">GSoC</span>
+          </div>
+          <p>Contributed observability tooling improvements to a CNCF sandbox project.</p>
+        </div>
+
+        <!-- Contributor 3: GSoC -->
+        <div class="contributor-card" data-program="gsoc">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Karan Singh</h3>
+                <p class="contributor-org">@ Wikimedia</p>
+              </div>
+            </div>
+            <span class="tag tag-orange">GSoC</span>
+          </div>
+          <p>Built a new moderation queue feature for a Wikimedia community tool.</p>
+        </div>
+
+        <!-- Contributor 4: LFX Mentorship -->
+        <div class="contributor-card" data-program="lfx">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Sneha Joshi</h3>
+                <p class="contributor-org">@ Linux Foundation</p>
+              </div>
+            </div>
+            <span class="tag tag-blue">LFX</span>
+          </div>
+          <p>Completed an LFX Mentorship term contributing to a Kubernetes-adjacent networking project.</p>
+        </div>
+
+        <!-- Contributor 5: LFX Mentorship -->
+        <div class="contributor-card" data-program="lfx">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Aditya Rao</h3>
+                <p class="contributor-org">@ OpenSSF</p>
+              </div>
+            </div>
+            <span class="tag tag-blue">LFX</span>
+          </div>
+          <p>Worked on supply-chain security tooling as part of the OpenSSF mentorship cohort.</p>
+        </div>
+
+        <!-- Contributor 6: GitHub Extern -->
+        <div class="contributor-card" data-program="extern">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Isha Kapoor</h3>
+                <p class="contributor-org">@ GitHub</p>
+              </div>
+            </div>
+            <span class="tag tag-purple">GitHub Extern</span>
+          </div>
+          <p>Selected for the GitHub Externship program, working on developer tooling docs and SDKs.</p>
+        </div>
+
+        <!-- Contributor 7: GitHub Extern -->
+        <div class="contributor-card" data-program="extern">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Vivaan Gupta</h3>
+                <p class="contributor-org">@ GitHub</p>
+              </div>
+            </div>
+            <span class="tag tag-purple">GitHub Extern</span>
+          </div>
+          <p>Contributed to GitHub Actions marketplace documentation and example workflows.</p>
+        </div>
+
+        <!-- Contributor 8: MLH Fellowship -->
+        <div class="contributor-card" data-program="mlh">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Tanya Bansal</h3>
+                <p class="contributor-org">@ MLH Fellowship</p>
+              </div>
+            </div>
+            <span class="tag" style="color:#f87171; background:rgba(248,113,113,0.08); border-color:rgba(248,113,113,0.2);">MLH</span>
+          </div>
+          <p>Completed the Major League Hacking Fellowship's open source track, shipping features to a real-world repo.</p>
+        </div>
+
+        <!-- Contributor 9: GSoC -->
+        <div class="contributor-card" data-program="gsoc">
+          <div class="contributor-head">
+            <div class="contributor-info">
+              <div class="contributor-avatar">👤</div>
+              <div>
+                <h3>Dev Malhotra</h3>
+                <p class="contributor-org">@ Mozilla</p>
+              </div>
+            </div>
+            <span class="tag tag-orange">GSoC</span>
+          </div>
+          <p>Worked on accessibility improvements for a Mozilla developer tool during GSoC.</p>
+        </div>
+
+      </div><!-- /contributors-grid -->
+
+
+      <!-- ── FEATURED PROJECTS ─────────────────────────────
+           Open source repos maintained by the club itself.
+           ───────────────────────────────────────────────── -->
+      <p class="section-label">// our repos</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-desc">
+        Beyond contributing externally, Point Blank also builds and maintains
+        its own open source tools and learning resources.
+      </p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Club website itself -->
+        <div class="project-card">
+          <div class="project-head">
+            <h3>pointblank-website</h3>
+            <span class="tag tag-blue">JavaScript</span>
+          </div>
+          <p>The official Point Blank club website — open sourced so any member can contribute pages, fixes, or features.</p>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>⭐ 84</span>
+              <span>🍴 21</span>
+            </div>
+            <a href="https://github.com/pointblank-club" target="_blank" rel="noopener noreferrer" class="project-link">View Repo →</a>
+          </div>
+        </div>
+
+        <!-- Project 2: CP problem archive -->
+        <div class="project-card">
+          <div class="project-head">
+            <h3>pb-hustle-archive</h3>
+            <span class="tag">C++</span>
+          </div>
+          <p>An archive of every PB Hustle contest problem, editorial, and test case — used to onboard new CP members.</p>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>⭐ 142</span>
+              <span>🍴 38</span>
+            </div>
+            <a href="https://github.com/pointblank-club" target="_blank" rel="noopener noreferrer" class="project-link">View Repo →</a>
+          </div>
+        </div>
+
+        <!-- Project 3: Onboarding bot -->
+        <div class="project-card">
+          <div class="project-head">
+            <h3>pb-discord-bot</h3>
+            <span class="tag tag-purple">Python</span>
+          </div>
+          <p>The Discord bot that powers role assignment, event reminders, and resource sharing inside the community server.</p>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>⭐ 56</span>
+              <span>🍴 17</span>
+            </div>
+            <a href="https://github.com/pointblank-club" target="_blank" rel="noopener noreferrer" class="project-link">View Repo →</a>
+          </div>
+        </div>
+
+        <!-- Project 4: GSoC prep guide -->
+        <div class="project-card">
+          <div class="project-head">
+            <h3>gsoc-prep-guide</h3>
+            <span class="tag tag-orange">Markdown</span>
+          </div>
+          <p>A community-maintained guide covering proposal writing, org selection, and timelines for GSoC aspirants.</p>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>⭐ 203</span>
+              <span>🍴 64</span>
+            </div>
+            <a href="https://github.com/pointblank-club" target="_blank" rel="noopener noreferrer" class="project-link">View Repo →</a>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER — identical markup to other pages.
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Point Blank
+        </p>
+        <p>Student-run Open Source community from India, building together since 2019.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Point Blank. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles:
+         1. Hamburger menu toggle
+         2. Program filter for the contributors grid
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>

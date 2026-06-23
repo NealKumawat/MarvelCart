@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marvel Cart — Student-run Open Source Community from India</title>
+  <meta name="description" content="Marvel Cart is a student-run Open Source community from India. We are a group of tech enthusiasts who love to learn and grow together." />
+
+  <!-- Google Fonts: JetBrains Mono (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (hero, domains, activities, etc.) -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       Sticky top bar. "active" class marks the current page.
+       All other pages share this exact same navbar markup.
+       ===================================================== -->
+  <nav class="navbar">
+
+    <!-- Logo: "<. > Marvel Cart" — bracket coloured by .bracket class -->
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Marvel Cart
+    </a>
+
+    <!-- Hamburger toggle (visible on mobile only via CSS) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav links — "active" on the current page link -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"        class="active">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="oss.html">OSS</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html">Hustle Results</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- =====================================================
+       HERO SECTION
+       Full-viewport opener. bg-grid + glow-spot classes
+       apply the faint grid and radial glow from styles.css.
+       ===================================================== -->
+  <section class="hero bg-grid glow-spot">
+    <div class="hero-inner">
+
+      <!-- Eyebrow label (small text above the H1) -->
+      <p class="hero-eyebrow">Student-run · Open Source · India</p>
+
+      <!-- Main heading -->
+      <h1>
+        We Are <span class="bracket">&lt;. &gt;</span><br />
+        Marvel Cart
+      </h1>
+
+      <!-- Subtitle line below the H1 -->
+      <p class="hero-subtitle">
+        <span class="text-accent2">Student-run</span> Student Driven Community
+      </p>
+
+      <!-- Short body copy -->
+      <p class="hero-desc">
+        ....{Description of marvel cart}
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="hero-cta">
+        <a href="members.html" class="btn btn-primary">Meet the Members</a>
+        <a href="events.html"  class="btn btn-outline">View Events</a>
+      </div>
+
+      <!-- Statistics strip at the bottom of the hero -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">13<span>+</span></div>
+          <div class="stat-label">GSoC Mentees</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3<span>+</span></div>
+          <div class="stat-label">GSoC Mentors</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6<span>+</span></div>
+          <div class="stat-label">SIH Winners</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">2021</div>
+          <div class="stat-label">Est. Year</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       GSoC 2026 ANNOUNCEMENT BANNER
+       ===================================================== -->
+  <div class="container gsoc-wrap">
+    <div class="gsoc-banner">
+      <div class="gsoc-left">
+        <div class="gsoc-icon">☀️</div>
+        <div>
+          <p class="gsoc-title">GSoC 2026</p>
+          <p class="gsoc-sub">
+            Hearty congratulations to all 13 mentees and 3 mentors who made history this year.
+          </p>
+        </div>
+      </div>
+      <div class="gsoc-nums">
+        <div class="gsoc-num-item">
+          <div class="gsoc-num">13</div>
+          <div class="gsoc-nlabel">Mentees</div>
+        </div>
+        <div class="gsoc-num-item">
+          <div class="gsoc-num">3</div>
+          <div class="gsoc-nlabel">Mentors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       SCROLLING TICKER STRIP
+       Items are duplicated so the CSS loop is seamless.
+       ===================================================== -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="highlight">GSoC 2026</span> <span>·</span>
+      <span>Marvel Cart Dominates</span> <span>·</span>
+      <span class="highlight">13 Mentees</span> <span>·</span>
+      <span>Open Source</span> <span>·</span>
+      <span class="highlight">SIH Winners</span> <span>·</span>
+      <span>CP Culture</span> <span>·</span>
+      <span class="highlight">ICPC Regionals</span> <span>·</span>
+      <span>Hackathons</span> <span>·</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="highlight">GSoC 2026</span> <span>·</span>
+      <span>Marvel Cart Dominates</span> <span>·</span>
+      <span class="highlight">13 Mentees</span> <span>·</span>
+      <span>Open Source</span> <span>·</span>
+      <span class="highlight">SIH Winners</span> <span>·</span>
+      <span>CP Culture</span> <span>·</span>
+      <span class="highlight">ICPC Regionals</span> <span>·</span>
+      <span>Hackathons</span>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MISSION & VISION SECTION
+       Two rows: text + image placeholder, second row flipped.
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <p class="section-label">// our purpose</p>
+      <h2 class="section-title">
+        Our Mission, <span class="text-accent">together.</span>
+      </h2>
+
+      <!-- Row 1: text left / image right -->
+      <div class="mission-grid">
+        <div class="mission-text">
+          <h3>Mission</h3>
+          <p>
+            We want to create a place where people actually learn instead of just following steps.
+            No shortcuts, no spoon feeding. Just curiosity, effort, and people helping each other grow.
+            If you are stuck, ask. If you are learning, share. If you are building something, show it.
+            Learn by doing, make mistakes, and figure things out together.
+          </p>
+        </div>
+        <div class="img-block">[ Mission Image ]</div>
+      </div>
+
+      <!-- Row 2: image left / text right -->
+      <div class="mission-grid flip">
+        <div class="mission-text">
+          <h3>Vision</h3>
+          <p>
+            We see a community where learning feels normal and not forced. A place where beginners
+            can start without hesitation and experienced people still find new challenges. Over time,
+            this should become more than just a coding space — a group of people who build things,
+            share ideas, and keep pushing each other forward.
+          </p>
+        </div>
+        <div class="img-block">[ Vision Image ]</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- =====================================================
+       FEATURE ROWS — Connect / Learn / Bored
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Feature 1 -->
+      <div class="feature-row">
+        <div class="feature-text">
+          <p class="section-label">// connect</p>
+          <h2>Connect with other Coders</h2>
+          <p>
+            Stuck on something? Just ask. Someone here has probably been through the same
+            thing. Share your code, your projects, your ideas. You will find people who
+            are figuring things out just like you.
+          </p>
+        </div>
+        <div class="feature-img img-block">[ Connect Illustration ]</div>
+      </div>
+
+      <!-- Feature 2 (image on left) -->
+      <div class="feature-row flip">
+        <div class="feature-text">
+          <p class="section-label">// learn</p>
+          <h2>Want to learn something new?</h2>
+          <p>
+            Learning here is not about memorising solutions. It is about exploring ideas,
+            asking better questions, and figuring things out with people on the same path.
+            Whether you are just starting or levelling up, there is always someone to help.
+          </p>
+        </div>
+        <div class="feature-img img-block">[ Learn Illustration ]</div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-row">
+        <div class="feature-text">
+          <p class="section-label">// community</p>
+          <h2>Feeling bored?</h2>
+          <p>
+            Hop into a chat, talk random stuff, share memes, or see what others are building.
+            It is more than just code here — a space where you can chill, reset, and enjoy
+            being part of something real.
+          </p>
+        </div>
+        <div class="feature-img img-block">[ Bored Illustration ]</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       DOMAINS WE LOVE
+       ===================================================== -->
+  <section class="section domains-section">
+    <div class="container">
+
+      <p class="section-label">// expertise</p>
+      <h2 class="section-title">Domains we Love</h2>
+      <p class="section-desc">
+        Our club covers a wide range of interests and fields, bringing unique perspectives
+        and expertise to every project we take on.
+      </p>
+
+      <div class="domains-grid">
+        <div class="domain-card"><div class="domain-icon">⚙️</div><div class="domain-name">DevOps</div></div>
+        <div class="domain-card"><div class="domain-icon">🔧</div><div class="domain-name">IOT · Hardware</div></div>
+        <div class="domain-card"><div class="domain-icon">🏆</div><div class="domain-name">Kaggle</div></div>
+        <div class="domain-card"><div class="domain-icon">🧠</div><div class="domain-name">ML Research</div></div>
+        <div class="domain-card"><div class="domain-icon">🌐</div><div class="domain-name">Open Source</div></div>
+        <div class="domain-card"><div class="domain-icon">💻</div><div class="domain-name">Web Dev</div></div>
+        <div class="domain-card"><div class="domain-icon">📊</div><div class="domain-name">Competitive Programming</div></div>
+        <div class="domain-card"><div class="domain-icon">📱</div><div class="domain-name">App Dev</div></div>
+        <div class="domain-card"><div class="domain-icon">🤖</div><div class="domain-name">AOSP</div></div>
+        <div class="domain-card"><div class="domain-icon">🛠️</div><div class="domain-name">Systems Engineering</div></div>
+        <div class="domain-card"><div class="domain-icon">💡</div><div class="domain-name">Hackathon</div></div>
+        <div class="domain-card"><div class="domain-icon">🔐</div><div class="domain-name">Cybersecurity</div></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       ACTIVITIES SECTION
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <p class="section-label">// what we do</p>
+      <h2 class="section-title">Activities</h2>
+      <p class="section-desc">Ongoing programs that define the Marvel Cart experience.</p>
+
+      <div class="activities-grid">
+
+        <div class="activity-card">
+          <div class="activity-thumb cp">🏁</div>
+          <div class="activity-body">
+            <p class="activity-tag">CP Contests</p>
+            <h3>PB Hustle</h3>
+            <p>Strong competitive programming culture since 2021. Teams qualified for ICPC Regionals.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-thumb dev">🛠️</div>
+          <div class="activity-body">
+            <p class="activity-tag">Development</p>
+            <h3>PB Chronicles</h3>
+            <p>Hands-on workshops across web, mobile, DevOps, ML, and open source.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-thumb hack">🚀</div>
+          <div class="activity-body">
+            <p class="activity-tag">Hackathons</p>
+            <h3>Smart India Hackathon</h3>
+            <p>Annual internal SIH with consistent national qualifications, finals, and wins.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-thumb oss">☀️</div>
+          <div class="activity-body">
+            <p class="activity-tag">Open Source</p>
+            <h3>GSoC</h3>
+            <p>GSoC contributors, LFX scholars, and GitHub Externs across global organisations.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-thumb cyber">🔐</div>
+          <div class="activity-body">
+            <p class="activity-tag">Cybersecurity</p>
+            <h3>PBCTF</h3>
+            <p>Hands-on cybersecurity sessions + in-house Capture The Flag event.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-thumb research">🔬</div>
+          <div class="activity-body">
+            <p class="activity-tag">Innovation</p>
+            <h3>Research</h3>
+            <p>From hardware prototypes to published papers — experimentation beyond the classroom.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOUNDING MEMBERS
+       ===================================================== -->
+  <section class="section founders-section">
+    <div class="container">
+
+      <p class="section-label">// origins</p>
+      <h2 class="section-title">Our Founding Members</h2>
+      <p class="section-desc">
+        Marvel Cart is a passion project, born from a shared excitement to build a platform
+        for like-minded, driven students to learn from each other.
+      </p>
+
+      <div class="founders-grid">
+
+        <div class="founder-card">
+          <div class="founder-avatar">👨‍💻</div>
+          <h3>Mohit Agarwal</h3>
+          <p class="founder-role">SDE2 @ Glance · CP Lead</p>
+          <p class="founder-bio">
+            The driving force behind Marvel Cart's CP culture. Won Nokia Collegiate Code Rally
+            and qualified for ACM-ICPC Regionals.
+          </p>
+          <a href="https://linkedin.com/in/mohit-agarwal1" target="_blank" rel="noopener noreferrer" class="founder-linkedin">↗ LinkedIn</a>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-avatar">👨‍💻</div>
+          <h3>Soumya Pattanayak</h3>
+          <p class="founder-role">Amazon · Verse Innovation</p>
+          <p class="founder-bio">
+            Top coder, worked at Amazon and Verse Innovation. ACM-ICPC Regionalist known
+            for problem-solving and innovative projects.
+          </p>
+          <a href="https://linkedin.com/in/soumya713" target="_blank" rel="noopener noreferrer" class="founder-linkedin">↗ LinkedIn</a>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-avatar">👨‍💻</div>
+          <h3>Ashutosh Pandey</h3>
+          <p class="founder-role">Compiler Engineer @ AMD</p>
+          <p class="founder-bio">
+            Excelled in Open Source and Hackathons. GSoC with Arduino, won SIH,
+            and mentored students for international programs.
+          </p>
+          <a href="https://linkedin.com/in/ashupdsce" target="_blank" rel="noopener noreferrer" class="founder-linkedin">↗ LinkedIn</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       STAY CONNECTED
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <p class="section-label">// reach out</p>
+      <h2 class="section-title">Stay Connected</h2>
+
+      <div class="connect-grid">
+
+        <a href="https://careers.pointblank.club" target="_blank" rel="noopener noreferrer" class="connect-card">
+          <div class="connect-icon">💼</div>
+          <h3>Hire Us</h3>
+          <p>Let us discuss how we can bring your ideas to life with our expertise.</p>
+          <span class="connect-link">↗ careers.pointblank.club</span>
+        </a>
+
+        <a href="https://linktr.ee/pointblank_club" target="_blank" rel="noopener noreferrer" class="connect-card">
+          <div class="connect-icon">🔗</div>
+          <h3>Connect With Us</h3>
+          <p>Follow us across all social platforms for events, releases and highlights.</p>
+          <span class="connect-link">↗ linktr.ee/pointblank_club</span>
+        </a>
+
+        <a href="https://blog.pointblank.club" target="_blank" rel="noopener noreferrer" class="connect-card">
+          <div class="connect-icon">✍️</div>
+          <h3>Read Our Blog</h3>
+          <p>Stories and experiences shared by members on their tech journey.</p>
+          <span class="connect-link">↗ blog.pointblank.club</span>
+        </a>
+
+        <a href="#" class="connect-card">
+          <div class="connect-icon">📄</div>
+          <h3>Brochure</h3>
+          <p>All recent events, activities, and stats listed in our brochure.</p>
+          <span class="connect-link">↗ Download PDF</span>
+        </a>
+
+        <a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer" class="connect-card">
+          <div class="connect-icon">▶️</div>
+          <h3>Join Us on YouTube</h3>
+          <p>Event recaps, fun activities, and mixtapes. Check it out now!</p>
+          <span class="connect-link">↗ youtube.com/@pointblank_club</span>
+        </a>
+
+        <a href="https://github.com/pointblank-club" target="_blank" rel="noopener noreferrer" class="connect-card">
+          <div class="connect-icon">⌨️</div>
+          <h3>GitHub</h3>
+          <p>Meet the contributors who helped shape this project.</p>
+          <span class="connect-link">↗ github.com/pointblank-club</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Marvel Cart
+        </p>
+        <p>Student-run Open Source community from India, building together since 2021.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Marvel Cart. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles the hamburger menu toggle.
+       (This page has no filters, so nothing else is needed.)
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>

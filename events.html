@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Point Blank</title>
+  <meta name="description" content="Workshops, hackathons, contests, and everything Point Blank runs to keep the community learning and building." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (banner, filters, events grid) -->
+  <link rel="stylesheet" href="events.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — identical markup to index.html.
+       "active" class moved to the Events link.
+       ===================================================== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Point Blank
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="oss.html">OSS</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html">Hustle Results</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =====================================================
+       PAGE HERO
+       Shared .page-hero class from styles.css — short banner
+       used on every inner page (not full-viewport like index).
+       ===================================================== -->
+  <div class="page-hero bg-grid">
+    <div class="page-hero-inner">
+      <p class="section-label">// community calendar</p>
+      <h1># Events</h1>
+      <p>
+        Workshops, competitions, hackathons, and everything in between.
+        Point Blank runs events year-round to keep the community learning and building.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ── UPCOMING EVENT HIGHLIGHT ─────────────────────
+           Pinned banner for the next/featured event.
+           ───────────────────────────────────────────────── -->
+      <div class="upcoming-banner">
+        <div>
+          <div class="upcoming-badge">
+            <span class="pulse-dot"></span> UPCOMING
+          </div>
+          <p class="upcoming-title">PB Hustle — Season 6</p>
+          <p class="upcoming-date">📅 July 2026 · Online · Open to all members</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">Register Now ↗</a>
+      </div>
+
+
+      <!-- ── FILTER BAR ───────────────────────────────────
+           Clicking a filter button shows/hides cards whose
+           data-cat attribute matches (handled in script.js).
+           ───────────────────────────────────────────────── -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="cp">Competitive Programming</button>
+        <button class="filter-btn" data-filter="hack">Hackathon</button>
+        <button class="filter-btn" data-filter="oss">Open Source</button>
+        <button class="filter-btn" data-filter="web">Development</button>
+        <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+        <button class="filter-btn" data-filter="ml">ML / AI</button>
+      </div>
+
+
+      <!-- ── EVENTS GRID ──────────────────────────────────
+           Each .event-card has a data-cat attribute used by
+           the filter script. Categories: cp | hack | oss |
+           web | cyber | ml
+           ───────────────────────────────────────────────── -->
+      <div class="events-grid" id="eventsGrid">
+
+        <!-- Event 1: PB Hustle (Competitive Programming) -->
+        <div class="event-card" data-cat="cp">
+          <div class="event-thumb cp">🏁</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag">CP Contest</span>
+              <span class="event-date">Mar 2026</span>
+            </div>
+            <h3>PB Hustle — Season 5</h3>
+            <p>Internal competitive programming contest across beginner, intermediate, and advanced tracks.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 120+ participants</span>
+              <a href="hustle.html" class="event-link">Results →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2: PBCTF (Cybersecurity) -->
+        <div class="event-card" data-cat="cyber">
+          <div class="event-thumb cyber">🔐</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag tag-red">Cybersecurity</span>
+              <span class="event-date">Feb 2026</span>
+            </div>
+            <h3>PBCTF 2026</h3>
+            <p>Annual Capture The Flag event hosted in-house, with web, binary, crypto, and forensics challenges.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 80+ participants</span>
+              <a href="#" class="event-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3: GSoC Orientation (Open Source) -->
+        <div class="event-card" data-cat="oss">
+          <div class="event-thumb oss">☀️</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag tag-orange">Open Source</span>
+              <span class="event-date">Jan 2026</span>
+            </div>
+            <h3>GSoC Orientation 2026</h3>
+            <p>Kick-off session for GSoC aspirants covering proposal writing and mentorship tips from past contributors.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 60+ attendees</span>
+              <a href="oss.html" class="event-link">OSS →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 4: Next.js Workshop (Development) -->
+        <div class="event-card" data-cat="web">
+          <div class="event-thumb web">🌐</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag tag-blue">Development</span>
+              <span class="event-date">Nov 2025</span>
+            </div>
+            <h3>PB Chronicles — Next.js Edition</h3>
+            <p>Hands-on workshop on building full-stack apps with Next.js, covering app router and deployment.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 45+ attendees</span>
+              <a href="#" class="event-link">Slides →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 5: SIH Internal (Hackathon) -->
+        <div class="event-card" data-cat="hack">
+          <div class="event-thumb hack">🚀</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag tag-purple">Hackathon</span>
+              <span class="event-date">Sep 2025</span>
+            </div>
+            <h3>SIH 2025 — Internal Hackathon</h3>
+            <p>Annual internal hackathon to select and mentor teams for the national SIH finals.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 200+ participants</span>
+              <a href="achievements.html" class="event-link">Winners →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 6: ML Research Intro (ML / AI) -->
+        <div class="event-card" data-cat="ml">
+          <div class="event-thumb ml">🧠</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag" style="color:#e879f9; background:rgba(232,121,249,0.08); border-color:rgba(232,121,249,0.2);">ML / AI</span>
+              <span class="event-date">Aug 2025</span>
+            </div>
+            <h3>Intro to ML Research</h3>
+            <p>A two-day deep dive into ML research workflows, Kaggle competitions, and paper reading sessions.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 55+ attendees</span>
+              <a href="#" class="event-link">Resources →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 7: ICPC Bootcamp (Competitive Programming) -->
+        <div class="event-card" data-cat="cp">
+          <div class="event-thumb cp">📊</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag">CP Contest</span>
+              <span class="event-date">Jul 2025</span>
+            </div>
+            <h3>ICPC Preparation Bootcamp</h3>
+            <p>Intensive bootcamp covering graph theory, dynamic programming and ICPC-level problem solving.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 35+ attendees</span>
+              <a href="#" class="event-link">Problems →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 8: AOSP Workshop (Development) -->
+        <div class="event-card" data-cat="web">
+          <div class="event-thumb web">🤖</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag tag-blue">Development</span>
+              <span class="event-date">Jun 2025</span>
+            </div>
+            <h3>AOSP & Linux Kernel Basics</h3>
+            <p>Workshop on building custom Android ROMs, kernel patching, and the Linux Kernel Mentorship Program.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 30+ attendees</span>
+              <a href="#" class="event-link">Notes →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 9: DevOps for Students (Development) -->
+        <div class="event-card" data-cat="web">
+          <div class="event-thumb web">⚙️</div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span class="tag tag-blue">Development</span>
+              <span class="event-date">Apr 2025</span>
+            </div>
+            <h3>DevOps for Students</h3>
+            <p>Hands-on session on Docker, Kubernetes basics, CI/CD pipelines and deploying side projects.</p>
+            <div class="event-footer">
+              <span class="event-attendees">👥 50+ attendees</span>
+              <a href="#" class="event-link">Repo →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /events-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER — identical markup to index.html.
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Point Blank
+        </p>
+        <p>Student-run Open Source community from India, building together since 2019.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Point Blank. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles:
+         1. Hamburger menu toggle
+         2. Category filter for the events grid
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>

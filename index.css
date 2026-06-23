@@ -1,0 +1,588 @@
+/* ============================================================
+   POINT BLANK — index.css
+   Page-specific styles for index.html (Homepage).
+   Depends on styles.css being loaded first.
+
+   Sections covered:
+     1.  Hero
+     2.  GSoC Banner
+     3.  Ticker (defined in styles.css, no extra rules needed)
+     4.  Mission & Vision
+     5.  Feature Rows (Connect / Learn / Bored)
+     6.  Domains Grid
+     7.  Activities Grid
+     8.  Founding Members
+     9.  Stay Connected Cards
+   ============================================================ */
+
+
+/* ── 1. HERO ─────────────────────────────────────────────────
+   Full-viewport section. Grid overlay and glow come from
+   styles.css via .bg-grid and .glow-spot classes.
+   ──────────────────────────────────────────────────────────── */
+.hero {
+  min-height: calc(100vh - 60px); /* 60px = navbar height */
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  padding:         6rem 2rem 4rem;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin:    0 auto;
+  width:     100%;
+}
+
+/* Small eyebrow line above the main heading */
+.hero-eyebrow {
+  font-family:    var(--mono);
+  font-size:      0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color:          var(--accent);
+  margin-bottom:  1rem;
+  display:        flex;
+  align-items:    center;
+  gap:            8px;
+}
+
+/* Short horizontal rule before the eyebrow text */
+.hero-eyebrow::before {
+  content:    '';
+  width:      24px;
+  height:     1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Main hero heading */
+.hero h1 {
+  font-family:   var(--mono);
+  font-size:     clamp(2.6rem, 6vw, 5rem);
+  line-height:   1.1;
+  margin-bottom: 0.5rem;
+}
+
+/* "Student-run Open Source Community from India" */
+.hero-subtitle {
+  font-family:   var(--mono);
+  font-size:     clamp(1rem, 2.5vw, 1.4rem);
+  color:         var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Body copy under the subtitle */
+.hero-desc {
+  max-width:     560px;
+  font-size:     1rem;
+  line-height:   1.8;
+  color:         var(--text);
+  margin-bottom: 2.5rem;
+}
+
+/* Row of CTA buttons */
+.hero-cta {
+  display:   flex;
+  gap:       1rem;
+  flex-wrap: wrap;
+}
+
+/* Stats strip at the bottom of the hero */
+.hero-stats {
+  display:    flex;
+  gap:        3rem;
+  margin-top: 4rem;
+  flex-wrap:  wrap;
+}
+
+.stat-item {
+  font-family: var(--mono);
+}
+
+.stat-num {
+  font-size:   2.4rem;
+  font-weight: 700;
+  color:       var(--white);
+  line-height: 1;
+}
+
+/* The "+" or unit after the number */
+.stat-num span {
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size:      0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  margin-top:     4px;
+}
+
+@media (max-width: 600px) {
+  .hero-stats {
+    gap: 2rem;
+  }
+
+  .stat-num {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* ── 2. GSoC BANNER ──────────────────────────────────────────
+   Highlighted strip below the hero announcing GSoC results.
+   ──────────────────────────────────────────────────────────── */
+.gsoc-wrap {
+  padding-bottom: 3rem;
+}
+
+.gsoc-banner {
+  background:    linear-gradient(135deg, #0f1f0a 0%, #0a150a 100%);
+  border:        1px solid rgba(57, 255, 20, 0.2);
+  border-radius: var(--radius);
+  padding:       2rem 2.5rem;
+  display:       flex;
+  align-items:   center;
+  justify-content: space-between;
+  gap:           2rem;
+  flex-wrap:     wrap;
+}
+
+/* Left side: icon + text */
+.gsoc-left {
+  display:     flex;
+  align-items: center;
+  gap:         1rem;
+}
+
+/* Round icon circle */
+.gsoc-icon {
+  width:           48px;
+  height:          48px;
+  background:      rgba(57, 255, 20, 0.1);
+  border-radius:   50%;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.4rem;
+  flex-shrink:     0;
+}
+
+.gsoc-title {
+  font-family:   var(--mono);
+  font-size:     1rem;
+  font-weight:   700;
+  color:         var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.gsoc-sub {
+  font-size: 0.82rem;
+  color:     var(--muted);
+}
+
+/* Right side: stat numbers */
+.gsoc-nums {
+  display: flex;
+  gap:     2.5rem;
+}
+
+.gsoc-num-item {
+  text-align:  center;
+  font-family: var(--mono);
+}
+
+.gsoc-num {
+  font-size:   2rem;
+  font-weight: 700;
+  color:       var(--accent);
+  line-height: 1;
+}
+
+.gsoc-nlabel {
+  font-size:      0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  margin-top:     4px;
+}
+
+@media (max-width: 600px) {
+  .gsoc-banner {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+}
+
+
+/* ── 3. MISSION & VISION ─────────────────────────────────────
+   Two rows, each split into text + image placeholder.
+   Second row flips the order (image left, text right).
+   ──────────────────────────────────────────────────────────── */
+.mission-grid {
+  display:         grid;
+  grid-template-columns: 1fr 1fr;
+  gap:             4rem;
+  align-items:     center;
+  margin-bottom:   4rem;
+}
+
+/* Flip layout: swap the visual order of the two columns */
+.mission-grid.flip {
+  direction: rtl; /* flips column order */
+}
+
+/* Reset direction for the children so text stays LTR */
+.mission-grid.flip > * {
+  direction: ltr;
+}
+
+.mission-text h3 {
+  font-family:   var(--mono);
+  font-size:     1.3rem;
+  color:         var(--white);
+  margin-bottom: 1rem;
+}
+
+.mission-text p {
+  font-size:   0.95rem;
+  line-height: 1.8;
+  color:       var(--text);
+}
+
+@media (max-width: 768px) {
+  .mission-grid,
+  .mission-grid.flip {
+    grid-template-columns: 1fr;
+    direction:             ltr;
+    gap:                   2rem;
+  }
+}
+
+
+/* ── 4. FEATURE ROWS (Connect / Learn / Bored) ───────────────
+   Alternating two-column rows: text one side, image the other.
+   .flip moves the image to the left column.
+   ──────────────────────────────────────────────────────────── */
+.feature-row {
+  display:         grid;
+  grid-template-columns: 1fr 1fr;
+  gap:             4rem;
+  align-items:     center;
+  margin-bottom:   5rem;
+}
+
+/* Move the .feature-img before the text visually */
+.feature-row.flip .feature-img {
+  order: -1;
+}
+
+.feature-text h2 {
+  font-family:   var(--mono);
+  font-size:     clamp(1.3rem, 2.5vw, 1.7rem);
+  color:         var(--white);
+  margin-bottom: 1rem;
+}
+
+.feature-text p {
+  font-size:   0.95rem;
+  line-height: 1.8;
+  color:       var(--text);
+}
+
+@media (max-width: 768px) {
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap:                   2rem;
+  }
+
+  /* Always show image above text on mobile */
+  .feature-row .feature-img,
+  .feature-row.flip .feature-img {
+    order: -1;
+  }
+}
+
+
+/* ── 5. DOMAINS GRID ─────────────────────────────────────────
+   Responsive auto-fill grid of domain cards.
+   Each card shows an emoji icon + domain name.
+   ──────────────────────────────────────────────────────────── */
+.domains-section {
+  background:  var(--surface);
+  border-top:    1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.domains-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap:                   1rem;
+}
+
+.domain-card {
+  background:    var(--surface2);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.4rem 1rem;
+  text-align:    center;
+  cursor:        default;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.domain-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+.domain-icon {
+  font-size:     1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.domain-name {
+  font-family: var(--mono);
+  font-size:   0.74rem;
+  color:       var(--text);
+  line-height: 1.3;
+}
+
+
+/* ── 6. ACTIVITIES GRID ──────────────────────────────────────
+   6-card grid of club activities.
+   Each card has a coloured thumbnail area + text body.
+   ──────────────────────────────────────────────────────────── */
+.activities-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.5rem;
+}
+
+.activity-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:      hidden;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.activity-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+/* Coloured emoji thumbnail at the top of each card */
+.activity-thumb {
+  height:          160px;
+  background:      var(--surface2);
+  border-bottom:   1px solid var(--border);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       2.5rem;
+}
+
+/* Specific background tints per activity type */
+.activity-thumb.cp     { background: linear-gradient(135deg, #0a1a0a, #0f2d0f); }
+.activity-thumb.dev    { background: linear-gradient(135deg, #0a0a1a, #0d0d2b); }
+.activity-thumb.hack   { background: linear-gradient(135deg, #1a0a00, #2b1500); }
+.activity-thumb.oss    { background: linear-gradient(135deg, #0a1a1a, #062020); }
+.activity-thumb.cyber  { background: linear-gradient(135deg, #1a0a0a, #2b0000); }
+.activity-thumb.research { background: linear-gradient(135deg, #1a001a, #1f0030); }
+
+.activity-body {
+  padding: 1.2rem;
+}
+
+/* Small category label above the card title */
+.activity-tag {
+  font-family:    var(--mono);
+  font-size:      0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--accent);
+  margin-bottom:  0.4rem;
+}
+
+.activity-body h3 {
+  font-size:     0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.activity-body p {
+  font-size:   0.8rem;
+  color:       var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .activities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* ── 7. FOUNDING MEMBERS ─────────────────────────────────────
+   3-column grid of founder profile cards.
+   ──────────────────────────────────────────────────────────── */
+.founders-section {
+  background:    var(--surface);
+  border-top:    1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.founders-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.5rem;
+}
+
+.founder-card {
+  background:    var(--surface2);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       2rem 1.5rem;
+  text-align:    center;
+  transition:    border-color 0.2s;
+}
+
+.founder-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+/* Round avatar circle */
+.founder-avatar {
+  width:           80px;
+  height:          80px;
+  border-radius:   50%;
+  background:      var(--surface);
+  border:          2px solid var(--border);
+  margin:          0 auto 1rem;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.8rem;
+  overflow:        hidden;
+}
+
+.founder-card h3 {
+  font-size:     0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Job title / role label */
+.founder-role {
+  font-family:   var(--mono);
+  font-size:     0.7rem;
+  color:         var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.founder-bio {
+  font-size:   0.8rem;
+  color:       var(--muted);
+  line-height: 1.6;
+}
+
+/* LinkedIn arrow link */
+.founder-linkedin {
+  display:     inline-flex;
+  align-items: center;
+  gap:         4px;
+  font-family: var(--mono);
+  font-size:   0.7rem;
+  color:       var(--accent2);
+  margin-top:  1rem;
+}
+
+.founder-linkedin:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .founders-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* ── 8. STAY CONNECTED CARDS ─────────────────────────────────
+   6-card grid of outbound links: Hire Us, Social, Blog, etc.
+   ──────────────────────────────────────────────────────────── */
+.connect-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1rem;
+}
+
+.connect-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem;
+  transition:    border-color 0.2s, transform 0.2s;
+  display:       flex;
+  flex-direction: column;
+}
+
+.connect-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-2px);
+}
+
+.connect-icon {
+  font-size:     1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.connect-card h3 {
+  font-size:     0.88rem;
+  margin-bottom: 0.4rem;
+}
+
+.connect-card p {
+  font-size:   0.8rem;
+  color:       var(--muted);
+  line-height: 1.6;
+  flex:        1; /* push the link to the bottom */
+}
+
+/* Arrow link at the bottom of the card */
+.connect-link {
+  font-family:   var(--mono);
+  font-size:     0.7rem;
+  color:         var(--accent);
+  margin-top:    1rem;
+  display:       inline-block;
+  transition:    color 0.2s;
+}
+
+.connect-link:hover {
+  color: #55ff33;
+}
+
+@media (max-width: 768px) {
+  .connect-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .connect-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

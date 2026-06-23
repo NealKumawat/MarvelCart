@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lore — Point Blank</title>
+  <meta name="description" content="The founding story and history of Point Blank — a student-run Open Source community from India." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (story intro, timeline, quote, facts) -->
+  <link rel="stylesheet" href="lore.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — identical markup to other pages.
+       "active" class moved to the Lore link.
+       ===================================================== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Point Blank
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="oss.html">OSS</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html" class="active">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html">Hustle Results</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+  <div class="page-hero bg-grid">
+    <div class="page-hero-inner">
+      <p class="section-label">// the story so far</p>
+      <h1># Lore</h1>
+      <p>
+        Every community has a story. Here's how three students with an idea
+        became a multi-year, multi-domain tech community.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ── STORY INTRO ──────────────────────────────────
+           Opening paragraph styled with a drop-cap.
+           ───────────────────────────────────────────────── -->
+      <div class="story-intro">
+        <p>
+          In 2019, three engineering students sat down with a simple frustration —
+          there was no real space on campus for people who wanted to learn beyond
+          the syllabus. No shortcuts, no spoon-feeding, just curiosity and people
+          helping each other grow. That frustration became Point Blank.
+        </p>
+      </div>
+
+
+      <!-- ── LORE TIMELINE ─────────────────────────────────
+           Alternating chapter-style timeline of the club's
+           history. Each .lore-chapter is either left-aligned
+           (default) or right-aligned (.right class).
+           ───────────────────────────────────────────────── -->
+      <div class="lore-timeline">
+
+        <!-- Chapter 1: Founding (left) -->
+        <div class="lore-chapter">
+          <div class="lore-content">
+            <span class="lore-chapter-year">2019 · Chapter One</span>
+            <h3>Three Students, One Idea</h3>
+            <p>
+              Mohit Agarwal, Soumya Pattanayak, and Ashutosh Pandey started Point Blank
+              as a small group chat for solving competitive programming problems together.
+              What began as shared frustration over hard problems turned into a habit of
+              showing up for each other, every single day.
+            </p>
+          </div>
+          <span class="lore-dot"></span>
+          <div></div>
+        </div>
+
+        <!-- Chapter 2: First contest (right) -->
+        <div class="lore-chapter right">
+          <div></div>
+          <span class="lore-dot"></span>
+          <div class="lore-content">
+            <span class="lore-chapter-year">2020 · Chapter Two</span>
+            <h3>The First PB Hustle</h3>
+            <p>
+              What started as informal problem-sharing turned into the club's first
+              organised contest — PB Hustle. A handful of members competed for bragging
+              rights. The leaderboard became something people actually cared about.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chapter 3: Open source begins (left) -->
+        <div class="lore-chapter">
+          <div class="lore-content">
+            <span class="lore-chapter-year">2021 · Chapter Three</span>
+            <h3>Open Source Enters the Chat</h3>
+            <p>
+              Ashutosh's GSoC selection with Arduino changed the club's trajectory.
+              Suddenly, "open source" wasn't an abstract term — it was something a
+              member of your own group chat had actually done. The OSS wing was born.
+            </p>
+          </div>
+          <span class="lore-dot"></span>
+          <div></div>
+        </div>
+
+        <!-- Chapter 4: SIH wins (right) -->
+        <div class="lore-chapter right">
+          <div></div>
+          <span class="lore-dot"></span>
+          <div class="lore-content">
+            <span class="lore-chapter-year">2022–2023 · Chapter Four</span>
+            <h3>Hackathon Season</h3>
+            <p>
+              Point Blank started running its own internal Smart India Hackathon to
+              prep teams for the real thing. The bet paid off — national qualifications
+              became routine, and the club's hackathon culture took shape.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chapter 5: Growth & structure (left) -->
+        <div class="lore-chapter">
+          <div class="lore-content">
+            <span class="lore-chapter-year">2024 · Chapter Five</span>
+            <h3>From a Group Chat to a Community</h3>
+            <p>
+              With 100+ active members, the club formalised into domains — CP, OSS,
+              Web Dev, ML, Cybersecurity, and Systems. PBCTF launched. PB Chronicles
+              workshops became a monthly fixture. The founders graduated, but the
+              culture stayed.
+            </p>
+          </div>
+          <span class="lore-dot"></span>
+          <div></div>
+        </div>
+
+        <!-- Chapter 6: GSoC 2026 (right) -->
+        <div class="lore-chapter right">
+          <div></div>
+          <span class="lore-dot"></span>
+          <div class="lore-content">
+            <span class="lore-chapter-year">2026 · Chapter Six</span>
+            <h3>The Biggest Year Yet</h3>
+            <p>
+              13 GSoC mentees. 3 mentors. Multiple SIH finals. The community that
+              started as a group chat for solving hard problems together is now a
+              full-fledged pipeline into the open source and tech world.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /lore-timeline -->
+
+
+      <!-- ── PULL QUOTE ────────────────────────────────────
+           A reflective quote breaking up the timeline.
+           ───────────────────────────────────────────────── -->
+      <div class="lore-quote">
+        <p>"We never set out to build a club. We just didn't want to struggle alone."</p>
+        <p class="lore-quote-author">— Mohit Agarwal, Co-founder</p>
+      </div>
+
+
+      <!-- ── FUN FACTS ─────────────────────────────────────
+           Light trivia about the club's history.
+           ───────────────────────────────────────────────── -->
+      <p class="section-label">// trivia</p>
+      <h2 class="section-title">Fun Facts</h2>
+
+      <div class="facts-grid">
+
+        <div class="fact-card">
+          <div class="fact-icon">💬</div>
+          <h3>It started as a group chat</h3>
+          <p>Point Blank didn't begin with a website or a logo — just a WhatsApp group of three people sharing CP problems.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🏷️</div>
+          <h3>The name came from CP</h3>
+          <p>"Point Blank" was originally the name the founders used for their private contest practice sessions — it just stuck.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🌙</div>
+          <h3>Most contests happen at night</h3>
+          <p>True to CP culture, PB Hustle rounds are almost always scheduled for 9 PM onwards — peak focus hours, apparently.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🎯</div>
+          <h3>No formal recruitment for years</h3>
+          <p>For the first two years, there was no application process — you just had to show up consistently to be "in."</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🐍</div>
+          <h3>The Discord bot has a personality</h3>
+          <p>The community's Discord bot has roasted more failed submissions than any human member ever has.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🔁</div>
+          <h3>Every founder still mentors</h3>
+          <p>Despite being years into their careers, all three founders still show up for GSoC orientation sessions every year.</p>
+        </div>
+
+      </div><!-- /facts-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER — identical markup to other pages.
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Point Blank
+        </p>
+        <p>Student-run Open Source community from India, building together since 2019.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Point Blank. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles the hamburger menu toggle.
+       (This page has no filters.)
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>

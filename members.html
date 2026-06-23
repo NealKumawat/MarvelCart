@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members — Point Blank</title>
+  <meta name="description" content="Meet the coders, hackers, and builders of Point Blank — a student-run Open Source community from India." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (stats, filter bar, member cards) -->
+  <link rel="stylesheet" href="members.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — identical markup to other pages.
+       "active" class moved to the Members link.
+       ===================================================== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Point Blank
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="oss.html">OSS</a></li>
+      <li><a href="members.html" class="active">Members</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html">Hustle Results</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+  <div class="page-hero bg-grid">
+    <div class="page-hero-inner">
+      <p class="section-label">// the people</p>
+      <h1># Members</h1>
+      <p>
+        The coders, hackers, and builders who make Point Blank what it is.
+        From first-years to final-years, everyone here is learning by doing.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ── STATS STRIP ──────────────────────────────────
+           Quick numeric overview of the community.
+           ───────────────────────────────────────────────── -->
+      <div class="members-stats">
+        <div class="members-stat">
+          <div class="members-stat-num">150<span class="text-white">+</span></div>
+          <div class="members-stat-label">Active Members</div>
+        </div>
+        <div class="members-stat">
+          <div class="members-stat-num">12</div>
+          <div class="members-stat-label">Core Team</div>
+        </div>
+        <div class="members-stat">
+          <div class="members-stat-num">6</div>
+          <div class="members-stat-label">Domains Covered</div>
+        </div>
+        <div class="members-stat">
+          <div class="members-stat-num">2019</div>
+          <div class="members-stat-label">Community Since</div>
+        </div>
+      </div>
+
+
+      <!-- ── DOMAIN FILTER BAR ────────────────────────────
+           Filters the member grid by domain. JS toggles
+           .active and shows/hides cards by data-domain.
+           ───────────────────────────────────────────────── -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All Members</button>
+        <button class="filter-btn" data-filter="core">Core Team</button>
+        <button class="filter-btn" data-filter="cp">Competitive Programming</button>
+        <button class="filter-btn" data-filter="oss">Open Source</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+        <button class="filter-btn" data-filter="ml">ML / AI</button>
+        <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+      </div>
+
+
+      <!-- ── CORE TEAM SECTION ────────────────────────────
+           Leadership / coordinator-level members shown first.
+           ───────────────────────────────────────────────── -->
+      <div class="batch-heading">
+        <h3>// Core Team</h3>
+      </div>
+
+      <div class="members-grid">
+
+        <!-- Member: President -->
+        <div class="member-card" data-domain="core">
+          <div class="member-avatar">👤</div>
+          <h3>Aryan Sharma</h3>
+          <p class="member-role">President · Batch 2022</p>
+          <div class="member-domains">
+            <span class="tag">CP</span>
+            <span class="tag tag-blue">Web</span>
+          </div>
+          <div class="member-social">
+            <a href="#" title="GitHub">GH</a>
+            <a href="#" title="LinkedIn">in</a>
+            <a href="#" title="Twitter">𝕏</a>
+          </div>
+        </div>
+
+        <!-- Member: Vice President -->
+        <div class="member-card" data-domain="core">
+          <div class="member-avatar">👤</div>
+          <h3>Priya Mehta</h3>
+          <p class="member-role">Vice President · Batch 2022</p>
+          <div class="member-domains">
+            <span class="tag tag-orange">OSS</span>
+            <span class="tag tag-purple">Hackathon</span>
+          </div>
+          <div class="member-social">
+            <a href="#" title="GitHub">GH</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Member: Coordinator Head -->
+        <div class="member-card" data-domain="core">
+          <div class="member-avatar">👤</div>
+          <h3>Neal Kumawat</h3>
+          <p class="member-role">Coordinator Head · Batch 2024</p>
+          <div class="member-domains">
+            <span class="tag">ML</span>
+            <span class="tag tag-blue">Data Science</span>
+          </div>
+          <div class="member-social">
+            <a href="#" title="GitHub">GH</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Member: General Secretary -->
+        <div class="member-card" data-domain="core">
+          <div class="member-avatar">👤</div>
+          <h3>Rohan Verma</h3>
+          <p class="member-role">General Secretary · Batch 2023</p>
+          <div class="member-domains">
+            <span class="tag" style="color:#f87171; background:rgba(248,113,113,0.08); border-color:rgba(248,113,113,0.2);">Cybersecurity</span>
+          </div>
+          <div class="member-social">
+            <a href="#" title="GitHub">GH</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+
+      </div><!-- /members-grid (core) -->
+
+
+      <!-- ── GENERAL MEMBERS SECTION ──────────────────────
+           Rest of the active community, grouped loosely
+           by primary domain for easy filtering.
+           ───────────────────────────────────────────────── -->
+      <div class="batch-heading">
+        <h3>// Active Members</h3>
+      </div>
+
+      <div class="members-grid" id="membersGrid">
+
+        <!-- Member: CP -->
+        <div class="member-card" data-domain="cp">
+          <div class="member-avatar">👤</div>
+          <h3>Karan Singh</h3>
+          <p class="member-role">Member · Batch 2024</p>
+          <div class="member-domains"><span class="tag">CP</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: OSS -->
+        <div class="member-card" data-domain="oss">
+          <div class="member-avatar">👤</div>
+          <h3>Sneha Joshi</h3>
+          <p class="member-role">Member · Batch 2023</p>
+          <div class="member-domains"><span class="tag tag-orange">OSS</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: Web Dev -->
+        <div class="member-card" data-domain="web">
+          <div class="member-avatar">👤</div>
+          <h3>Aditya Rao</h3>
+          <p class="member-role">Member · Batch 2024</p>
+          <div class="member-domains"><span class="tag tag-blue">Web Dev</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: ML -->
+        <div class="member-card" data-domain="ml">
+          <div class="member-avatar">👤</div>
+          <h3>Isha Kapoor</h3>
+          <p class="member-role">Member · Batch 2023</p>
+          <div class="member-domains"><span class="tag">ML / AI</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: Cybersecurity -->
+        <div class="member-card" data-domain="cyber">
+          <div class="member-avatar">👤</div>
+          <h3>Vivaan Gupta</h3>
+          <p class="member-role">Member · Batch 2024</p>
+          <div class="member-domains">
+            <span class="tag" style="color:#f87171; background:rgba(248,113,113,0.08); border-color:rgba(248,113,113,0.2);">Cybersecurity</span>
+          </div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: CP -->
+        <div class="member-card" data-domain="cp">
+          <div class="member-avatar">👤</div>
+          <h3>Tanya Bansal</h3>
+          <p class="member-role">Member · Batch 2025</p>
+          <div class="member-domains"><span class="tag">CP</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: Web Dev -->
+        <div class="member-card" data-domain="web">
+          <div class="member-avatar">👤</div>
+          <h3>Dev Malhotra</h3>
+          <p class="member-role">Member · Batch 2025</p>
+          <div class="member-domains"><span class="tag tag-blue">Web Dev</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+        <!-- Member: OSS -->
+        <div class="member-card" data-domain="oss">
+          <div class="member-avatar">👤</div>
+          <h3>Riya Choudhary</h3>
+          <p class="member-role">Member · Batch 2024</p>
+          <div class="member-domains"><span class="tag tag-orange">OSS</span></div>
+          <div class="member-social"><a href="#" title="GitHub">GH</a></div>
+        </div>
+
+      </div><!-- /members-grid (general) -->
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER — identical markup to other pages.
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Point Blank
+        </p>
+        <p>Student-run Open Source community from India, building together since 2019.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Point Blank. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles:
+         1. Hamburger menu toggle
+         2. Domain filter for the active members grid
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>

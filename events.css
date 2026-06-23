@@ -1,0 +1,200 @@
+/* ============================================================
+   POINT BLANK — events.css
+   Page-specific styles for events.html.
+   Depends on styles.css being loaded first.
+
+   Sections covered:
+     1.  Upcoming Event Banner
+     2.  Filter Bar (category buttons)
+     3.  Events Grid + Event Card
+   ============================================================ */
+
+
+/* ── 1. UPCOMING EVENT BANNER ────────────────────────────────
+   Pinned highlight box at the top of the page for the
+   next/featured event. Re-uses the green gradient look
+   from the homepage's GSoC banner.
+   ──────────────────────────────────────────────────────────── */
+.upcoming-banner {
+  background:      linear-gradient(135deg, #0f1f0a 0%, #0a0a0a 100%);
+  border:          1px solid rgba(57, 255, 20, 0.2);
+  border-radius:   var(--radius);
+  padding:         2rem;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             1.5rem;
+  flex-wrap:       wrap;
+  margin-bottom:   3rem;
+}
+
+/* Small pill badge reading "UPCOMING" with a pulsing dot */
+.upcoming-badge {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            6px;
+  font-family:    var(--mono);
+  font-size:      0.72rem;
+  background:     rgba(57, 255, 20, 0.1);
+  color:          var(--accent);
+  border:         1px solid rgba(57, 255, 20, 0.25);
+  padding:        3px 10px;
+  border-radius:  20px;
+  margin-bottom:  0.6rem;
+}
+
+.upcoming-title {
+  font-family:   var(--mono);
+  font-size:     1.3rem;
+  color:         var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.upcoming-date {
+  font-size: 0.85rem;
+  color:     var(--muted);
+}
+
+
+/* ── 2. FILTER BAR ───────────────────────────────────────────
+   Row of pill buttons used to filter the events grid by
+   category. JS toggles .active and shows/hides cards based
+   on the matching data-cat attribute.
+   ──────────────────────────────────────────────────────────── */
+.filter-bar {
+  display:       flex;
+  gap:           0.5rem;
+  flex-wrap:     wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  font-family:   var(--mono);
+  font-size:     0.74rem;
+  padding:       6px 14px;
+  border-radius: 20px;
+  border:        1px solid var(--border);
+  background:    transparent;
+  color:         var(--muted);
+  cursor:        pointer;
+  transition:    all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color:        var(--accent);
+  background:   rgba(57, 255, 20, 0.06);
+}
+
+
+/* ── 3. EVENTS GRID + EVENT CARD ─────────────────────────────
+   3-column responsive grid. Each card has:
+     - a coloured thumbnail (tinted per category)
+     - a tag + date row
+     - title + description
+     - a footer with attendee count and a link
+   ──────────────────────────────────────────────────────────── */
+.events-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.5rem;
+}
+
+@media (max-width: 768px) {
+  .events-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .events-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.event-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:      hidden;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.event-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+/* Coloured banner area at the top of the card (emoji icon) */
+.event-thumb {
+  height:          120px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       2.2rem;
+  border-bottom:   1px solid var(--border);
+}
+
+/* Category-specific gradient tints — match activity thumbs on homepage */
+.event-thumb.cp    { background: linear-gradient(135deg, #0a1a0a, #0f2d0f); }
+.event-thumb.hack  { background: linear-gradient(135deg, #0a0a1a, #0d0d2b); }
+.event-thumb.oss   { background: linear-gradient(135deg, #1a0a00, #2b1500); }
+.event-thumb.web   { background: linear-gradient(135deg, #0a1a1a, #062020); }
+.event-thumb.cyber { background: linear-gradient(135deg, #1a0a0a, #2b0000); }
+.event-thumb.ml    { background: linear-gradient(135deg, #1a001a, #1f0030); }
+
+.event-body {
+  padding: 1.2rem;
+}
+
+/* Top row inside the body: category tag + date */
+.event-meta {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  margin-bottom:   0.5rem;
+}
+
+.event-date {
+  font-family: var(--mono);
+  font-size:   0.68rem;
+  color:       var(--muted);
+}
+
+.event-body h3 {
+  font-size:     0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.event-body p {
+  font-size:     0.8rem;
+  color:         var(--muted);
+  line-height:   1.6;
+  margin-bottom: 1rem;
+}
+
+/* Bottom row inside the card: attendees + link, separated by a border */
+.event-footer {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding-top:     0.75rem;
+  border-top:      1px solid var(--border);
+}
+
+.event-attendees {
+  font-family: var(--mono);
+  font-size:   0.7rem;
+  color:       var(--muted);
+}
+
+.event-link {
+  font-family:   var(--mono);
+  font-size:     0.7rem;
+  color:         var(--accent);
+  padding:       4px 10px;
+  border:        1px solid rgba(57, 255, 20, 0.3);
+  border-radius: var(--radius);
+  transition:    background 0.2s;
+}
+
+.event-link:hover {
+  background: rgba(57, 255, 20, 0.07);
+}

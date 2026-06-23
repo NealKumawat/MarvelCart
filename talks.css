@@ -1,0 +1,278 @@
+/* ============================================================
+   POINT BLANK — talks.css
+   Page-specific styles for talks.html.
+   Depends on styles.css being loaded first.
+
+   Sections covered:
+     1.  Stats Strip (talks delivered / speakers / hours)
+     2.  Topic Filter Bar
+     3.  Featured Talk (large highlighted card)
+     4.  Talks Grid + Talk Card (with video thumbnail)
+   ============================================================ */
+
+
+/* ── 1. STATS STRIP ──────────────────────────────────────────
+   Headline numbers for the talks/sessions program.
+   ──────────────────────────────────────────────────────────── */
+.talks-stats {
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:                   1.5rem;
+  margin-bottom:         3.5rem;
+}
+
+@media (max-width: 700px) {
+  .talks-stats { grid-template-columns: 1fr 1fr; }
+}
+
+.talks-stat-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem;
+  text-align:    center;
+  transition:    border-color 0.2s;
+}
+
+.talks-stat-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+.talks-stat-num {
+  font-family: var(--mono);
+  font-size:   2.2rem;
+  font-weight: 700;
+  color:       var(--accent);
+  line-height: 1;
+}
+
+.talks-stat-label {
+  font-family:    var(--mono);
+  font-size:      0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  margin-top:     6px;
+}
+
+
+/* ── 2. TOPIC FILTER BAR ─────────────────────────────────────
+   Pill buttons filtering talks by topic/domain.
+   ──────────────────────────────────────────────────────────── */
+.filter-bar {
+  display:       flex;
+  gap:           0.5rem;
+  flex-wrap:     wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  font-family:   var(--mono);
+  font-size:     0.74rem;
+  padding:       6px 14px;
+  border-radius: 20px;
+  border:        1px solid var(--border);
+  background:    transparent;
+  color:         var(--muted);
+  cursor:        pointer;
+  transition:    all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color:        var(--accent);
+  background:   rgba(57, 255, 20, 0.06);
+}
+
+
+/* ── 3. FEATURED TALK ────────────────────────────────────────
+   Large highlighted card for the most recent/popular talk.
+   Two-column layout: thumbnail left, details right.
+   ──────────────────────────────────────────────────────────── */
+.featured-talk {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   2rem;
+  background:            var(--surface);
+  border:                1px solid rgba(57, 255, 20, 0.2);
+  border-radius:         var(--radius);
+  padding:               2rem;
+  margin-bottom:         3.5rem;
+  align-items:           center;
+}
+
+@media (max-width: 768px) {
+  .featured-talk { grid-template-columns: 1fr; }
+}
+
+/* Video thumbnail placeholder with a play button overlay */
+.featured-thumb {
+  position:        relative;
+  background:      var(--surface2);
+  border:          1px solid var(--border);
+  border-radius:   var(--radius);
+  height:          240px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       2.5rem;
+  overflow:        hidden;
+}
+
+/* Play button circle on top of the thumbnail */
+.play-btn {
+  position:        absolute;
+  width:           56px;
+  height:          56px;
+  border-radius:   50%;
+  background:      rgba(57, 255, 20, 0.15);
+  border:          2px solid var(--accent);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.2rem;
+  color:           var(--accent);
+}
+
+.featured-badge {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           6px;
+  font-family:   var(--mono);
+  font-size:     0.7rem;
+  background:    rgba(57, 255, 20, 0.1);
+  color:         var(--accent);
+  border:        1px solid rgba(57, 255, 20, 0.25);
+  padding:       3px 10px;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.featured-info h2 {
+  font-family:   var(--mono);
+  font-size:     1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.featured-info p {
+  font-size:     0.9rem;
+  color:         var(--muted);
+  line-height:   1.8;
+  margin-bottom: 1rem;
+}
+
+.featured-speaker {
+  font-family:   var(--mono);
+  font-size:     0.78rem;
+  color:         var(--accent2);
+  margin-bottom: 1.25rem;
+}
+
+
+/* ── 4. TALKS GRID + TALK CARD ───────────────────────────────
+   3-column grid. Each card has a thumbnail with duration
+   badge, topic tag, title, speaker, and a watch link.
+   ──────────────────────────────────────────────────────────── */
+.talks-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.5rem;
+}
+
+@media (max-width: 768px) {
+  .talks-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .talks-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.talk-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:      hidden;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.talk-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+/* Thumbnail area with emoji icon + duration badge */
+.talk-thumb {
+  position:        relative;
+  height:          140px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       2rem;
+  border-bottom:   1px solid var(--border);
+}
+
+.talk-thumb.cp     { background: linear-gradient(135deg, #0a1a0a, #0f2d0f); }
+.talk-thumb.web    { background: linear-gradient(135deg, #0a0a1a, #0d0d2b); }
+.talk-thumb.oss    { background: linear-gradient(135deg, #1a0a00, #2b1500); }
+.talk-thumb.ml     { background: linear-gradient(135deg, #1a001a, #1f0030); }
+.talk-thumb.cyber  { background: linear-gradient(135deg, #1a0a0a, #2b0000); }
+.talk-thumb.career { background: linear-gradient(135deg, #0a1a1a, #062020); }
+
+/* Small duration label, bottom-right of the thumbnail */
+.talk-duration {
+  position:      absolute;
+  bottom:        8px;
+  right:         8px;
+  font-family:   var(--mono);
+  font-size:     0.65rem;
+  background:    rgba(0, 0, 0, 0.6);
+  color:         var(--white);
+  padding:       2px 6px;
+  border-radius: 4px;
+}
+
+.talk-body {
+  padding: 1.2rem;
+}
+
+.talk-body h3 {
+  font-size:     0.92rem;
+  margin:        0.6rem 0 0.4rem;
+}
+
+/* Speaker name + role line */
+.talk-speaker {
+  font-family:   var(--mono);
+  font-size:     0.72rem;
+  color:         var(--accent2);
+  margin-bottom: 0.8rem;
+}
+
+.talk-footer {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding-top:     0.75rem;
+  border-top:      1px solid var(--border);
+}
+
+.talk-date {
+  font-family: var(--mono);
+  font-size:   0.7rem;
+  color:       var(--muted);
+}
+
+.talk-link {
+  font-family:   var(--mono);
+  font-size:     0.7rem;
+  color:         var(--accent);
+  padding:       4px 10px;
+  border:        1px solid rgba(57, 255, 20, 0.3);
+  border-radius: var(--radius);
+  transition:    background 0.2s;
+}
+
+.talk-link:hover {
+  background: rgba(57, 255, 20, 0.07);
+}

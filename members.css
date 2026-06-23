@@ -1,0 +1,211 @@
+/* ============================================================
+   POINT BLANK — members.css
+   Page-specific styles for members.html.
+   Depends on styles.css being loaded first.
+
+   Sections covered:
+     1.  Stats Strip (member counts)
+     2.  Domain Filter Bar (re-uses .filter-btn from events.css look,
+         but defined locally so this page stays standalone)
+     3.  Members Grid + Member Card
+     4.  Batch Section Divider
+   ============================================================ */
+
+
+/* ── 1. STATS STRIP ──────────────────────────────────────────
+   Row of quick numeric stats shown under the page hero —
+   e.g. total members, batches, domains.
+   ──────────────────────────────────────────────────────────── */
+.members-stats {
+  display:       flex;
+  gap:           3rem;
+  flex-wrap:     wrap;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.members-stat {
+  font-family: var(--mono);
+}
+
+.members-stat-num {
+  font-size:   2.2rem;
+  font-weight: 700;
+  color:       var(--accent);
+  line-height: 1;
+}
+
+.members-stat-label {
+  font-size:      0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  margin-top:     4px;
+}
+
+
+/* ── 2. FILTER BAR ───────────────────────────────────────────
+   Same pill-button pattern as events.css, defined again here
+   so members.html does not depend on events.css.
+   ──────────────────────────────────────────────────────────── */
+.filter-bar {
+  display:       flex;
+  gap:           0.5rem;
+  flex-wrap:     wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  font-family:   var(--mono);
+  font-size:     0.74rem;
+  padding:       6px 14px;
+  border-radius: 20px;
+  border:        1px solid var(--border);
+  background:    transparent;
+  color:         var(--muted);
+  cursor:        pointer;
+  transition:    all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color:        var(--accent);
+  background:   rgba(57, 255, 20, 0.06);
+}
+
+
+/* ── 3. MEMBERS GRID + MEMBER CARD ───────────────────────────
+   4-column responsive grid of member cards.
+   Each card shows: avatar, name, role/batch, domain tags,
+   and a row of social icon links.
+   ──────────────────────────────────────────────────────────── */
+.members-grid {
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:                   1.25rem;
+  margin-bottom:         4rem;
+}
+
+@media (max-width: 600px) {
+  .members-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .members-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .members-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.member-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem 1.25rem;
+  text-align:    center;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.member-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+/* Round avatar placeholder — swap for <img> in production */
+.member-avatar {
+  width:           70px;
+  height:          70px;
+  border-radius:   50%;
+  background:      var(--surface2);
+  border:          2px solid var(--border);
+  margin:          0 auto 0.9rem;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.5rem;
+  overflow:        hidden;
+}
+
+.member-card h3 {
+  font-size:     0.88rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Role + batch line, e.g. "Coordinator Head · 2024" */
+.member-role {
+  font-family:   var(--mono);
+  font-size:     0.68rem;
+  color:         var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+/* Row of small domain tags under the role */
+.member-domains {
+  display:        flex;
+  flex-wrap:      wrap;
+  justify-content: center;
+  gap:            4px;
+  margin-bottom:  1rem;
+}
+
+/* Smaller tag variant just for this grid (re-uses tag colours from styles.css) */
+.member-domains .tag {
+  font-size: 0.62rem;
+  padding:   1px 8px;
+}
+
+/* Row of social icon links at the bottom of the card */
+.member-social {
+  display:         flex;
+  justify-content: center;
+  gap:             0.5rem;
+}
+
+.member-social a {
+  width:           28px;
+  height:          28px;
+  border:          1px solid var(--border);
+  border-radius:   50%;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       0.68rem;
+  font-family:     var(--mono);
+  color:           var(--muted);
+  transition:      border-color 0.2s, color 0.2s;
+}
+
+.member-social a:hover {
+  border-color: var(--accent);
+  color:        var(--accent);
+}
+
+
+/* ── 4. BATCH SECTION DIVIDER ────────────────────────────────
+   Small heading used to separate members by batch/year
+   (e.g. "Batch 2024–2028", "Core Team").
+   ──────────────────────────────────────────────────────────── */
+.batch-heading {
+  display:       flex;
+  align-items:   center;
+  gap:           12px;
+  margin-bottom: 1.5rem;
+}
+
+.batch-heading h3 {
+  font-family:    var(--mono);
+  font-size:      0.95rem;
+  color:          var(--white);
+  white-space:    nowrap;
+}
+
+/* Horizontal line filling the rest of the row */
+.batch-heading::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: var(--border);
+}

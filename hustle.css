@@ -1,0 +1,328 @@
+/* ============================================================
+   POINT BLANK — hustle.css
+   Page-specific styles for hustle.html.
+   Depends on styles.css being loaded first.
+
+   Sections covered:
+     1.  Stats Strip (contest headline numbers)
+     2.  Season Filter Bar
+     3.  Podium (top 3 highlight)
+     4.  Leaderboard Table
+     5.  Past Seasons Grid
+   ============================================================ */
+
+
+/* ── 1. STATS STRIP ──────────────────────────────────────────
+   Headline numbers for the PB Hustle contest series.
+   ──────────────────────────────────────────────────────────── */
+.hustle-stats {
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:                   1.5rem;
+  margin-bottom:         3.5rem;
+}
+
+@media (max-width: 700px) {
+  .hustle-stats { grid-template-columns: 1fr 1fr; }
+}
+
+.hustle-stat-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem;
+  text-align:    center;
+  transition:    border-color 0.2s;
+}
+
+.hustle-stat-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+.hustle-stat-num {
+  font-family: var(--mono);
+  font-size:   2.2rem;
+  font-weight: 700;
+  color:       var(--accent);
+  line-height: 1;
+}
+
+.hustle-stat-label {
+  font-family:    var(--mono);
+  font-size:      0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  margin-top:     6px;
+}
+
+
+/* ── 2. SEASON FILTER BAR ────────────────────────────────────
+   Pill buttons to switch which season's leaderboard is shown.
+   ──────────────────────────────────────────────────────────── */
+.filter-bar {
+  display:       flex;
+  gap:           0.5rem;
+  flex-wrap:     wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  font-family:   var(--mono);
+  font-size:     0.74rem;
+  padding:       6px 14px;
+  border-radius: 20px;
+  border:        1px solid var(--border);
+  background:    transparent;
+  color:         var(--muted);
+  cursor:        pointer;
+  transition:    all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color:        var(--accent);
+  background:   rgba(57, 255, 20, 0.06);
+}
+
+
+/* ── 3. PODIUM ────────────────────────────────────────────────
+   Top-3 highlight cards shown above the full leaderboard
+   table. Middle card (rank 1) is taller to feel like a podium.
+   ──────────────────────────────────────────────────────────── */
+.podium {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:                   1rem;
+  align-items:           end;
+  margin-bottom:         3.5rem;
+}
+
+@media (max-width: 700px) {
+  .podium { grid-template-columns: 1fr; }
+}
+
+.podium-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem 1rem;
+  text-align:    center;
+  transition:    border-color 0.2s;
+}
+
+.podium-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+/* Rank 1 card stands taller and brighter, like the top step */
+.podium-card.rank-1 {
+  border-color:  rgba(57, 255, 20, 0.4);
+  padding-top:   2.5rem;
+  padding-bottom: 2.5rem;
+  background:    linear-gradient(135deg, #0f1f0a 0%, #111111 100%);
+}
+
+.podium-medal {
+  font-size:     2rem;
+  margin-bottom: 0.5rem;
+}
+
+.podium-avatar {
+  width:           60px;
+  height:          60px;
+  border-radius:   50%;
+  background:      var(--surface2);
+  border:          2px solid var(--border);
+  margin:          0 auto 0.75rem;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.4rem;
+}
+
+.podium-card.rank-1 .podium-avatar {
+  border-color: var(--accent);
+  width:        72px;
+  height:       72px;
+}
+
+/* Rank 2 and 3 sit slightly shorter than rank 1 by default
+   (handled naturally via align-items: end on .podium) */
+.podium-card.rank-2,
+.podium-card.rank-3 {
+  border-color: var(--border);
+}
+
+.podium-card h3 {
+  font-size:     0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.podium-score {
+  font-family: var(--mono);
+  font-size:   1.1rem;
+  color:       var(--accent);
+  font-weight: 700;
+}
+
+.podium-rank-label {
+  font-family:    var(--mono);
+  font-size:      0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  margin-top:     4px;
+}
+
+
+/* ── 4. LEADERBOARD TABLE ────────────────────────────────────
+   Full ranked results table for ranks 4 and below
+   (top 3 already shown on the podium above).
+   ──────────────────────────────────────────────────────────── */
+.leaderboard-wrap {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:      hidden;
+  margin-bottom: 4rem;
+}
+
+.leaderboard {
+  width:           100%;
+  border-collapse: collapse;
+}
+
+.leaderboard thead th {
+  text-align:     left;
+  font-family:    var(--mono);
+  font-size:      0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--muted);
+  padding:        1rem 1.25rem;
+  border-bottom:  1px solid var(--border);
+  background:     var(--surface2);
+}
+
+.leaderboard tbody td {
+  padding:       0.9rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size:     0.85rem;
+}
+
+.leaderboard tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.leaderboard tbody tr:hover {
+  background: rgba(57, 255, 20, 0.03);
+}
+
+/* Rank number column */
+.lb-rank {
+  font-family: var(--mono);
+  color:       var(--muted);
+  width:       50px;
+}
+
+/* Participant name + tiny avatar combo */
+.lb-name {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+}
+
+.lb-avatar {
+  width:           30px;
+  height:          30px;
+  border-radius:   50%;
+  background:      var(--surface2);
+  border:          1px solid var(--border);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       0.85rem;
+  flex-shrink:     0;
+}
+
+/* Score column, right-aligned and emphasised */
+.lb-score {
+  font-family: var(--mono);
+  color:       var(--accent);
+  font-weight: 600;
+  text-align:  right;
+}
+
+/* Problems-solved column */
+.lb-solved {
+  font-family: var(--mono);
+  color:       var(--text);
+  text-align:  center;
+}
+
+@media (max-width: 600px) {
+  .leaderboard thead th:nth-child(4),
+  .leaderboard tbody td:nth-child(4) {
+    display: none; /* hide "solved" column on very small screens */
+  }
+}
+
+
+/* ── 5. PAST SEASONS GRID ────────────────────────────────────
+   Quick-glance cards for previous PB Hustle seasons.
+   ──────────────────────────────────────────────────────────── */
+.seasons-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.25rem;
+}
+
+@media (max-width: 768px) {
+  .seasons-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .seasons-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.season-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.season-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+.season-head {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  margin-bottom:   0.75rem;
+}
+
+.season-head h3 {
+  font-family: var(--mono);
+  font-size:   0.95rem;
+}
+
+.season-card p {
+  font-size:     0.82rem;
+  color:         var(--muted);
+  line-height:   1.6;
+  margin-bottom: 0.8rem;
+}
+
+.season-winner {
+  font-family: var(--mono);
+  font-size:   0.75rem;
+  color:       var(--accent2);
+  padding-top: 0.75rem;
+  border-top:  1px solid var(--border);
+}

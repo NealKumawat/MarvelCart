@@ -1,0 +1,214 @@
+/* ============================================================
+   POINT BLANK — lore.css
+   Page-specific styles for lore.html.
+   Depends on styles.css being loaded first.
+
+   Sections covered:
+     1.  Story Intro Block
+     2.  Lore Timeline (chapter-style, alternating sides)
+     3.  Quote Block
+     4.  Easter Egg / Fun Facts Grid
+   ============================================================ */
+
+
+/* ── 1. STORY INTRO BLOCK ────────────────────────────────────
+   Large opening paragraph styled like the first page of a
+   storybook / chapter opener.
+   ──────────────────────────────────────────────────────────── */
+.story-intro {
+  max-width:     680px;
+  margin-bottom: 4rem;
+}
+
+.story-intro p {
+  font-size:   1.05rem;
+  line-height: 2;
+  color:       var(--text);
+}
+
+/* Drop-cap style first letter for storytelling feel */
+.story-intro p::first-letter {
+  font-family: var(--mono);
+  font-size:   2.2rem;
+  color:       var(--accent);
+  font-weight: 700;
+  padding-right: 4px;
+}
+
+
+/* ── 2. LORE TIMELINE ─────────────────────────────────────────
+   Chapter-style timeline. Unlike the achievements timeline
+   (single column), this one alternates left/right on desktop
+   to feel more like a storybook spread. Falls back to a
+   single column with a left line on mobile.
+   ──────────────────────────────────────────────────────────── */
+.lore-timeline {
+  position: relative;
+}
+
+/* Centered vertical line for desktop view */
+.lore-timeline::before {
+  content:    '';
+  position:   absolute;
+  top:        0;
+  bottom:     0;
+  left:       50%;
+  width:      1px;
+  background: var(--border);
+  transform:  translateX(-50%);
+}
+
+.lore-chapter {
+  position:              relative;
+  display:               grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items:           start;
+  margin-bottom:         3rem;
+}
+
+/* Chapter dot sitting on the centre line */
+.lore-dot {
+  grid-column:     2;
+  width:           16px;
+  height:          16px;
+  border-radius:   50%;
+  background:      var(--bg);
+  border:          2px solid var(--accent);
+  margin:          6px auto 0;
+  z-index:         1;
+}
+
+/* Text block — alternates which column it occupies */
+.lore-content {
+  grid-column: 1;
+  text-align:  right;
+  padding-right: 2rem;
+}
+
+/* Odd chapters: content on the right instead */
+.lore-chapter.right .lore-content {
+  grid-column: 3;
+  text-align:  left;
+  padding-right: 0;
+  padding-left:  2rem;
+}
+
+.lore-chapter-year {
+  font-family:   var(--mono);
+  font-size:     0.78rem;
+  color:         var(--accent);
+  margin-bottom: 0.5rem;
+  display:       inline-block;
+}
+
+.lore-content h3 {
+  font-family:   var(--mono);
+  font-size:     1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.lore-content p {
+  font-size:   0.9rem;
+  color:       var(--muted);
+  line-height: 1.8;
+}
+
+/* Mobile: collapse to single column, left-aligned, line on the left */
+@media (max-width: 768px) {
+  .lore-timeline::before {
+    left: 7px;
+  }
+
+  .lore-chapter,
+  .lore-chapter.right {
+    grid-template-columns: 30px 1fr;
+    padding-left: 0;
+  }
+
+  .lore-dot {
+    grid-column: 1;
+    margin:      6px 0 0;
+  }
+
+  .lore-content,
+  .lore-chapter.right .lore-content {
+    grid-column:   2;
+    text-align:    left;
+    padding-left:  1.25rem;
+    padding-right: 0;
+  }
+}
+
+
+/* ── 3. QUOTE BLOCK ──────────────────────────────────────────
+   Large pull-quote used to break up the timeline, e.g. a
+   founder's reflection on the club's journey.
+   ──────────────────────────────────────────────────────────── */
+.lore-quote {
+  border-left:   3px solid var(--accent);
+  padding:       0.5rem 0 0.5rem 2rem;
+  margin:        4rem 0;
+  max-width:     700px;
+}
+
+.lore-quote p {
+  font-family: var(--mono);
+  font-size:   1.15rem;
+  color:       var(--white);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.lore-quote-author {
+  font-family: var(--mono);
+  font-size:   0.8rem;
+  color:       var(--accent2);
+}
+
+
+/* ── 4. FUN FACTS GRID ───────────────────────────────────────
+   Light-hearted trivia / easter-egg style facts about the
+   club's history, shown as a small card grid at the end.
+   ──────────────────────────────────────────────────────────── */
+.facts-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.25rem;
+}
+
+@media (max-width: 768px) {
+  .facts-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .facts-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.fact-card {
+  background:    var(--surface);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.fact-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform:    translateY(-3px);
+}
+
+.fact-icon {
+  font-size:     1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.fact-card h3 {
+  font-size:     0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.fact-card p {
+  font-size:   0.82rem;
+  color:       var(--muted);
+  line-height: 1.6;
+}

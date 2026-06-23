@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hustle Results — Point Blank</title>
+  <meta name="description" content="Leaderboards and results from PB Hustle, Point Blank's flagship competitive programming contest series." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (stats, podium, leaderboard, seasons) -->
+  <link rel="stylesheet" href="hustle.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — identical markup to other pages.
+       "active" class moved to the Hustle Results link.
+       ===================================================== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Point Blank
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="oss.html">OSS</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html" class="active">Hustle Results</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+  <div class="page-hero bg-grid">
+    <div class="page-hero-inner">
+      <p class="section-label">// pb hustle</p>
+      <h1># Hustle Results</h1>
+      <p>
+        Leaderboards, podiums, and season history from PB Hustle —
+        Point Blank's flagship competitive programming contest series since 2019.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ── STATS STRIP ──────────────────────────────────
+           Headline numbers for the PB Hustle series.
+           ───────────────────────────────────────────────── -->
+      <div class="hustle-stats">
+        <div class="hustle-stat-card">
+          <div class="hustle-stat-num">5</div>
+          <div class="hustle-stat-label">Seasons Run</div>
+        </div>
+        <div class="hustle-stat-card">
+          <div class="hustle-stat-num">120+</div>
+          <div class="hustle-stat-label">Participants</div>
+        </div>
+        <div class="hustle-stat-card">
+          <div class="hustle-stat-num">38</div>
+          <div class="hustle-stat-label">Problems Set</div>
+        </div>
+        <div class="hustle-stat-card">
+          <div class="hustle-stat-num">2019</div>
+          <div class="hustle-stat-label">Since</div>
+        </div>
+      </div>
+
+
+      <!-- ── SEASON FILTER BAR ─────────────────────────────
+           In a live site this would swap the podium and
+           leaderboard data per season. Season 5 shown below.
+           ───────────────────────────────────────────────── -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-season="5">Season 5 (2026)</button>
+        <button class="filter-btn" data-season="4">Season 4 (2025)</button>
+        <button class="filter-btn" data-season="3">Season 3 (2024)</button>
+        <button class="filter-btn" data-season="2">Season 2 (2022)</button>
+        <button class="filter-btn" data-season="1">Season 1 (2020)</button>
+      </div>
+
+
+      <!-- ── PODIUM (TOP 3) ────────────────────────────────
+           Highlight cards for the top 3 finishers of the
+           currently selected season.
+           ───────────────────────────────────────────────── -->
+      <p class="section-label">// season 5 results</p>
+      <h2 class="section-title">Top Finishers</h2>
+
+      <div class="podium">
+
+        <!-- Rank 2 -->
+        <div class="podium-card rank-2">
+          <div class="podium-medal">🥈</div>
+          <div class="podium-avatar">👤</div>
+          <h3>Karan Singh</h3>
+          <div class="podium-score">2840 pts</div>
+          <div class="podium-rank-label">Rank 2</div>
+        </div>
+
+        <!-- Rank 1 (taller, centred) -->
+        <div class="podium-card rank-1">
+          <div class="podium-medal">🥇</div>
+          <div class="podium-avatar">👤</div>
+          <h3>Tanya Bansal</h3>
+          <div class="podium-score">3120 pts</div>
+          <div class="podium-rank-label">Rank 1 · Champion</div>
+        </div>
+
+        <!-- Rank 3 -->
+        <div class="podium-card rank-3">
+          <div class="podium-medal">🥉</div>
+          <div class="podium-avatar">👤</div>
+          <h3>Dev Malhotra</h3>
+          <div class="podium-score">2705 pts</div>
+          <div class="podium-rank-label">Rank 3</div>
+        </div>
+
+      </div><!-- /podium -->
+
+
+      <!-- ── FULL LEADERBOARD ──────────────────────────────
+           Ranks 4 onward, in a sortable-looking table.
+           ───────────────────────────────────────────────── -->
+      <div class="leaderboard-wrap">
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Participant</th>
+              <th>Problems Solved</th>
+              <th style="text-align:right;">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td class="lb-rank">4</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Riya Choudhary
+              </td>
+              <td class="lb-solved">11 / 12</td>
+              <td class="lb-score">2640 pts</td>
+            </tr>
+
+            <tr>
+              <td class="lb-rank">5</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Vivaan Gupta
+              </td>
+              <td class="lb-solved">10 / 12</td>
+              <td class="lb-score">2510 pts</td>
+            </tr>
+
+            <tr>
+              <td class="lb-rank">6</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Isha Kapoor
+              </td>
+              <td class="lb-solved">10 / 12</td>
+              <td class="lb-score">2480 pts</td>
+            </tr>
+
+            <tr>
+              <td class="lb-rank">7</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Aditya Rao
+              </td>
+              <td class="lb-solved">9 / 12</td>
+              <td class="lb-score">2310 pts</td>
+            </tr>
+
+            <tr>
+              <td class="lb-rank">8</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Sneha Joshi
+              </td>
+              <td class="lb-solved">9 / 12</td>
+              <td class="lb-score">2255 pts</td>
+            </tr>
+
+            <tr>
+              <td class="lb-rank">9</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Priya Mehta
+              </td>
+              <td class="lb-solved">8 / 12</td>
+              <td class="lb-score">2080 pts</td>
+            </tr>
+
+            <tr>
+              <td class="lb-rank">10</td>
+              <td class="lb-name">
+                <span class="lb-avatar">👤</span> Rohan Verma
+              </td>
+              <td class="lb-solved">8 / 12</td>
+              <td class="lb-score">1990 pts</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div><!-- /leaderboard-wrap -->
+
+
+      <!-- ── PAST SEASONS ──────────────────────────────────
+           Quick summary cards for each previous season.
+           ───────────────────────────────────────────────── -->
+      <p class="section-label">// history</p>
+      <h2 class="section-title">Past Seasons</h2>
+
+      <div class="seasons-grid">
+
+        <!-- Season 4 -->
+        <div class="season-card">
+          <div class="season-head">
+            <h3>Season 4 — 2025</h3>
+            <span class="tag">12 Problems</span>
+          </div>
+          <p>Ran across 3 rounds over two weeks, with the hardest problem set in the series' history so far.</p>
+          <div class="season-winner">🏆 Winner: Vivaan Gupta</div>
+        </div>
+
+        <!-- Season 3 -->
+        <div class="season-card">
+          <div class="season-head">
+            <h3>Season 3 — 2024</h3>
+            <span class="tag">10 Problems</span>
+          </div>
+          <p>First season to be streamed live on the club's Discord, with a record 60+ participants.</p>
+          <div class="season-winner">🏆 Winner: Karan Singh</div>
+        </div>
+
+        <!-- Season 2 -->
+        <div class="season-card">
+          <div class="season-head">
+            <h3>Season 2 — 2022</h3>
+            <span class="tag">8 Problems</span>
+          </div>
+          <p>Marked the return of in-person contests after the club's earliest fully-online seasons.</p>
+          <div class="season-winner">🏆 Winner: Mohit Agarwal</div>
+        </div>
+
+        <!-- Season 1 -->
+        <div class="season-card">
+          <div class="season-head">
+            <h3>Season 1 — 2020</h3>
+            <span class="tag">6 Problems</span>
+          </div>
+          <p>The very first PB Hustle — informal, online, and judged manually by the three founders.</p>
+          <div class="season-winner">🏆 Winner: Soumya Pattanayak</div>
+        </div>
+
+      </div><!-- /seasons-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER — identical markup to other pages.
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Point Blank
+        </p>
+        <p>Student-run Open Source community from India, building together since 2019.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Point Blank. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles:
+         1. Hamburger menu toggle
+         2. Season filter button state (visual toggle only —
+            see the TODO comment inside script.js for where
+            real per-season data swapping would go)
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>

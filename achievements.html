@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements — Point Blank</title>
+  <meta name="description" content="SIH wins, GSoC selections, ICPC regionals, and research milestones from the Point Blank community." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles (tokens, reset, navbar, footer, utilities) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific styles (stats, filter bar, timeline, cards) -->
+  <link rel="stylesheet" href="achievements.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — identical markup to other pages.
+       "active" class moved to the Achievements link.
+       ===================================================== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;. &gt;</span>&nbsp;Point Blank
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="oss.html">OSS</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="achievements.html" class="active">Achievements</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="hustle.html">Hustle Results</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+  <div class="page-hero bg-grid">
+    <div class="page-hero-inner">
+      <p class="section-label">// track record</p>
+      <h1># Achievements</h1>
+      <p>
+        SIH wins, GSoC selections, ICPC regionals, and research milestones —
+        a timeline of what this community has built together since 2019.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ── STATS STRIP ──────────────────────────────────
+           Headline numbers summarising the track record.
+           ───────────────────────────────────────────────── -->
+      <div class="achv-stats">
+        <div class="achv-stat-card">
+          <div class="achv-stat-num">6+</div>
+          <div class="achv-stat-label">SIH Wins</div>
+        </div>
+        <div class="achv-stat-card">
+          <div class="achv-stat-num">13+</div>
+          <div class="achv-stat-label">GSoC Selections</div>
+        </div>
+        <div class="achv-stat-card">
+          <div class="achv-stat-num">5+</div>
+          <div class="achv-stat-label">ICPC Regionalists</div>
+        </div>
+        <div class="achv-stat-card">
+          <div class="achv-stat-num">10+</div>
+          <div class="achv-stat-label">Research Papers</div>
+        </div>
+      </div>
+
+
+      <!-- ── CATEGORY FILTER BAR ──────────────────────────
+           Filters timeline items by data-cat attribute.
+           ───────────────────────────────────────────────── -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="oss">Open Source / GSoC</button>
+        <button class="filter-btn" data-filter="hack">Hackathons / SIH</button>
+        <button class="filter-btn" data-filter="cp">Competitive Programming</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+      </div>
+
+
+      <!-- ── TIMELINE ─────────────────────────────────────
+           Vertical line with year-stamped achievement cards.
+           Newest entries at the top.
+           ───────────────────────────────────────────────── -->
+      <div class="timeline" id="timeline">
+
+        <!-- Timeline Item: GSoC 2026 -->
+        <div class="timeline-item" data-cat="oss">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2026</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">☀️</span> GSoC 2026 — 13 Mentees Selected</h3>
+              <span class="tag tag-orange">Open Source</span>
+            </div>
+            <p>
+              Point Blank's biggest GSoC year yet — 13 students selected as mentees and
+              3 members returning as mentors across multiple open source organisations.
+            </p>
+            <span class="achv-credit">13 Mentees · 3 Mentors</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: SIH 2025 -->
+        <div class="timeline-item" data-cat="hack">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2025</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">🏆</span> Smart India Hackathon — National Finalists</h3>
+              <span class="tag tag-purple">Hackathon</span>
+            </div>
+            <p>
+              Two teams from Point Blank qualified for the SIH national finals, with one
+              team placing in the top 3 in the Healthcare problem statement track.
+            </p>
+            <span class="achv-credit">Team NexCura · Mohit, Soumya, Ashutosh</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: ICPC Regionals 2025 -->
+        <div class="timeline-item" data-cat="cp">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2025</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">📊</span> ACM-ICPC Regionals Qualification</h3>
+              <span class="tag">Competitive Programming</span>
+            </div>
+            <p>
+              Three teams from the club's competitive programming wing qualified for
+              ACM-ICPC Regionals, continuing a multi-year streak of regional qualifications.
+            </p>
+            <span class="achv-credit">PB Hustle Core Team</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: Research Publication 2025 -->
+        <div class="timeline-item" data-cat="research">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2025</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">🔬</span> MedAssure Research Roadmap Initiated</h3>
+              <span class="tag tag-blue">Research</span>
+            </div>
+            <p>
+              A structured 11-paper publication roadmap was developed for the MedAssure
+              wearable biosensor project, targeting venues like IEEE JBHI and Nature Digital Medicine.
+            </p>
+            <span class="achv-credit">MedAssure Team</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: Navothon 2024 -->
+        <div class="timeline-item" data-cat="hack">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2024</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">🥇</span> Navothon: Ideas to Impact — First Place</h3>
+              <span class="tag tag-purple">Hackathon</span>
+            </div>
+            <p>
+              Team NexCura won first place at Navothon: Ideas to Impact, hosted at
+              IIT Jodhpur, with a healthcare-focused innovation pitch.
+            </p>
+            <span class="achv-credit">Team NexCura · IIT Jodhpur</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: GSoC 2024 -->
+        <div class="timeline-item" data-cat="oss">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2024</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">☀️</span> GSoC 2024 — First Cohort Selected</h3>
+              <span class="tag tag-orange">Open Source</span>
+            </div>
+            <p>
+              The club's earliest GSoC contributors were selected this year, setting the
+              foundation for the open-source mentorship culture that followed.
+            </p>
+            <span class="achv-credit">4 Mentees</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: Nokia Code Rally -->
+        <div class="timeline-item" data-cat="cp">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2022</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">🏁</span> Nokia Collegiate Code Rally — Winner</h3>
+              <span class="tag">Competitive Programming</span>
+            </div>
+            <p>
+              Mohit Agarwal, one of the club's founding members, won the Nokia Collegiate
+              Code Rally — an early marker of the club's competitive programming strength.
+            </p>
+            <span class="achv-credit">Mohit Agarwal</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: GSoC with Arduino -->
+        <div class="timeline-item" data-cat="oss">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2021</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">⚡</span> GSoC with Arduino</h3>
+              <span class="tag tag-orange">Open Source</span>
+            </div>
+            <p>
+              Founding member Ashutosh Pandey completed Google Summer of Code with
+              Arduino, becoming one of the community's earliest open source success stories.
+            </p>
+            <span class="achv-credit">Ashutosh Pandey</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: Founding -->
+        <div class="timeline-item" data-cat="cp">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2019</span>
+          <div class="achv-card">
+            <div class="achv-card-head">
+              <h3><span class="achv-icon">🚩</span> Point Blank Founded</h3>
+              <span class="tag">Milestone</span>
+            </div>
+            <p>
+              Point Blank began as a passion project — three students who wanted to build
+              a platform for driven peers to learn from each other through real projects.
+            </p>
+            <span class="achv-credit">Mohit, Soumya & Ashutosh</span>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER — identical markup to other pages.
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="bracket">&lt;. &gt;</span> Point Blank
+        </p>
+        <p>Student-run Open Source community from India, building together since 2019.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pointblank_club_" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+          <a href="https://x.com/pointblank_club"           target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://linkedin.com/company/pointblank-club" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="https://github.com/pointblank-club"      target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="oss.html">OSS</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="talks.html">Talks</a></li>
+          <li><a href="hustle.html">Hustle Results</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://blog.pointblank.club"         target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="https://careers.pointblank.club"      target="_blank" rel="noopener noreferrer">Hire Us</a></li>
+          <li><a href="https://youtube.com/@pointblank_club" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/pointblank-club"   target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linktr.ee/pointblank_club"    target="_blank" rel="noopener noreferrer">Linktree</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Point Blank. All Rights Reserved.</span>
+      <span class="text-accent">Built with ❤️ by the community</span>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Shared script.js handles:
+         1. Hamburger menu toggle
+         2. Category filter for the achievements timeline
+       ===================================================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>
