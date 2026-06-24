@@ -20,7 +20,7 @@
   --border:   #1e1e1e;   /* default border colour         */
 
   /* Accent colours */
-  --accent:   #39FF14;   /* electric green — primary cta  */
+  --accent:   #d81314;   /* electric green — primary cta ;;;; was #39FF14; before */
   --accent2:  #00c2ff;   /* cyan — secondary highlight    */
 
   /* Text */
