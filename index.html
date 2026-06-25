@@ -171,18 +171,20 @@
   <!-- =====================================================
        MISSION & VISION SECTION
        Two rows: text + image placeholder, second row flipped.
+       reveal / reveal-left / reveal-right classes added below
+       so each side slides in from its own direction on scroll.
        ===================================================== -->
   <section class="section">
     <div class="container">
 
       <p class="section-label">// our purpose</p>
-      <h2 class="section-title">
+      <h2 class="section-title reveal">
         Our Mission, <span class="text-accent">together.</span>
       </h2>
 
       <!-- Row 1: text left / image right -->
       <div class="mission-grid">
-        <div class="mission-text">
+        <div class="mission-text reveal reveal-left">
           <h3>Mission</h3>
           <p>
             We want to create a place where people actually learn instead of just following steps.
@@ -191,12 +193,12 @@
             Learn by doing, make mistakes, and figure things out together.
           </p>
         </div>
-        <div class="img-block">[ Mission Image ]</div>
+        <div class="img-block reveal reveal-right">[ Mission Image ]</div>
       </div>
 
       <!-- Row 2: image left / text right -->
       <div class="mission-grid flip">
-        <div class="mission-text">
+        <div class="mission-text reveal reveal-right">
           <h3>Vision</h3>
           <p>
             We see a community where learning feels normal and not forced. A place where beginners
@@ -205,7 +207,7 @@
             share ideas, and keep pushing each other forward.
           </p>
         </div>
-        <div class="img-block">[ Vision Image ]</div>
+        <div class="img-block reveal reveal-left">[ Vision Image ]</div>
       </div>
 
     </div>
@@ -216,6 +218,9 @@
 
   <!-- =====================================================
        FEATURE ROWS — Connect / Learn / Bored
+       "Connect" row and the Learn-row image remain commented
+       out exactly as you left them. reveal classes added only
+       to the rows/elements that are still active.
        ===================================================== -->
   <section class="section">
     <div class="container">
@@ -236,7 +241,7 @@
 
       <!-- Feature 2 (image on left) -->
       <div class="feature-row flip">
-        <div class="feature-text">
+        <div class="feature-text reveal reveal-right">
           <p class="section-label">// learn</p>
           <h2>Want to learn something new?</h2>
           <p>
@@ -250,7 +255,7 @@
 
       <!-- Feature 3 -->
       <div class="feature-row">
-        <div class="feature-text">
+        <div class="feature-text reveal reveal-left">
           <p class="section-label">// community</p>
           <h2>Feeling bored?</h2>
           <p>
@@ -259,7 +264,7 @@
             being part of something real.
           </p>
         </div>
-        <div class="feature-img img-block">[ Bored Illustration ]</div>
+        <div class="feature-img img-block reveal reveal-right">[ Bored Illustration ]</div>
       </div>
 
     </div>
@@ -268,30 +273,33 @@
 
   <!-- =====================================================
        DOMAINS WE LOVE
+       reveal-group added to the grid so the 12 domain cards
+       cascade in one after another (staggered) instead of
+       fading in all at once.
        ===================================================== -->
   <section class="section domains-section">
     <div class="container">
 
       <p class="section-label">// expertise</p>
-      <h2 class="section-title">Domains we Love</h2>
+      <h2 class="section-title reveal">Domains we Love</h2>
       <p class="section-desc">
         Our club covers a wide range of interests and fields, bringing unique perspectives
         and expertise to every project we take on.
       </p>
 
-      <div class="domains-grid">
-        <div class="domain-card"><div class="domain-icon">⚙️</div><div class="domain-name">DevOps</div></div>
-        <div class="domain-card"><div class="domain-icon">🔧</div><div class="domain-name">IOT · Hardware</div></div>
-        <div class="domain-card"><div class="domain-icon">🏆</div><div class="domain-name">Kaggle</div></div>
-        <div class="domain-card"><div class="domain-icon">🧠</div><div class="domain-name">ML Research</div></div>
-        <div class="domain-card"><div class="domain-icon">🌐</div><div class="domain-name">Open Source</div></div>
-        <div class="domain-card"><div class="domain-icon">💻</div><div class="domain-name">Web Dev</div></div>
-        <div class="domain-card"><div class="domain-icon">📊</div><div class="domain-name">Competitive Programming</div></div>
-        <div class="domain-card"><div class="domain-icon">📱</div><div class="domain-name">App Dev</div></div>
-        <div class="domain-card"><div class="domain-icon">🤖</div><div class="domain-name">AOSP</div></div>
-        <div class="domain-card"><div class="domain-icon">🛠️</div><div class="domain-name">Systems Engineering</div></div>
-        <div class="domain-card"><div class="domain-icon">💡</div><div class="domain-name">Hackathon</div></div>
-        <div class="domain-card"><div class="domain-icon">🔐</div><div class="domain-name">Cybersecurity</div></div>
+      <div class="domains-grid reveal-group">
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">⚙️</div><div class="domain-name">DevOps</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🔧</div><div class="domain-name">IOT · Hardware</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🏆</div><div class="domain-name">Kaggle</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🧠</div><div class="domain-name">ML Research</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🌐</div><div class="domain-name">Open Source</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">💻</div><div class="domain-name">Web Dev</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">📊</div><div class="domain-name">Competitive Programming</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">📱</div><div class="domain-name">App Dev</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🤖</div><div class="domain-name">AOSP</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🛠️</div><div class="domain-name">Systems Engineering</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">💡</div><div class="domain-name">Hackathon</div></div>
+        <div class="domain-card reveal reveal-scale"><div class="domain-icon">🔐</div><div class="domain-name">Cybersecurity</div></div>
       </div>
 
     </div>
@@ -300,6 +308,7 @@
 
   <!-- =====================================================
        ACTIVITIES SECTION
+       Left exactly as you commented it out — untouched.
        ===================================================== -->
   <!-- <section class="section">
     <div class="container">
@@ -371,20 +380,22 @@
 
   <!-- =====================================================
        FOUNDING MEMBERS
+       reveal-group added to the grid so the 3 founder cards
+       cascade in. Content (names, bios, LinkedIn) untouched.
        ===================================================== -->
   <section class="section founders-section">
     <div class="container">
 
       <p class="section-label">// origins</p>
-      <h2 class="section-title">Our Founding Members</h2>
+      <h2 class="section-title reveal">Our Founding Members</h2>
       <p class="section-desc">
         Marvel Cart is a passion project, born from a shared excitement to build a platform
         for like-minded, driven students to learn from each other.
       </p>
 
-      <div class="founders-grid">
+      <div class="founders-grid reveal-group">
 
-        <div class="founder-card">
+        <div class="founder-card reveal reveal-scale">
           <div class="founder-avatar">👨‍💻</div>
           <h3>Dr Geerija Lavania</h3>
           <p class="founder-role">JECRC Foundation · Professor AiDS</p>
@@ -395,7 +406,7 @@
           <a href="https://www.linkedin.com/in/dr-geerija-lavania-ab5b561b8" target="_blank" rel="noopener noreferrer" class="founder-linkedin">↗ LinkedIn</a>
         </div>
 
-        <div class="founder-card">
+        <div class="founder-card reveal reveal-scale">
           <div class="founder-avatar">👨‍💻</div>
           <h3>Dr Ruchi Sharma</h3>
           <p class="founder-role">JECRC Foundation · Professor AiDS</p>
@@ -406,7 +417,7 @@
           <a href="https://www.linkedin.com/in/ruchisharma2k6" target="_blank" rel="noopener noreferrer" class="founder-linkedin">↗ LinkedIn</a>
         </div>
 
-        <div class="founder-card">
+        <div class="founder-card reveal reveal-scale">
           <div class="founder-avatar">👨‍💻</div>
           <h3>Rohit Pareek</h3>
           <p class="founder-role">Cloud Computing · Salesforce</p>
@@ -424,6 +435,7 @@
 
   <!-- =====================================================
        STAY CONNECTED
+       Left exactly as you commented it out — untouched.
        ===================================================== -->
   <!-- <section class="section">
     <div class="container">
@@ -534,8 +546,10 @@
 
   <!-- =====================================================
        JAVASCRIPT
-       Shared script.js handles the hamburger menu toggle.
-       (This page has no filters, so nothing else is needed.)
+       Shared script.js now also handles scroll-reveal
+       animations, staggered card entrances, navbar scroll
+       state, and button ripple feedback — in addition to
+       the hamburger menu toggle.
        ===================================================== -->
   <script src="script.js"></script>
 

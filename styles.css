@@ -20,7 +20,7 @@
   --border:   #1e1e1e;   /* default border colour         */
 
   /* Accent colours */
-  --accent:   #d81314;   /* electric green — primary cta ;;;; was #39FF14; before */
+  --accent:   #d81314;   /* electric green — primary cta  */
   --accent2:  #00c2ff;   /* cyan — secondary highlight    */
 
   /* Text */
@@ -641,4 +641,141 @@ p {
   background:    radial-gradient(circle, rgba(57, 255, 20, 0.07) 0%, transparent 70%);
   pointer-events: none;
   z-index:       0;
+}
+
+
+/* ── 17. SCROLL REVEAL ANIMATIONS ────────────────────────────
+   Works together with script.js (initScrollReveal +
+   initStaggeredGroups). Add the class "reveal" to any element
+   to have it fade/slide into place the first time it scrolls
+   into view. JS only toggles the "visible" class — all the
+   actual motion lives here, so the timing/feel can be tuned
+   in one place without touching JS.
+
+   Direction modifiers (optional, add alongside "reveal"):
+     reveal-left   — slides in from the left
+     reveal-right  — slides in from the right
+     reveal-scale  — scales up slightly while fading in
+   (no modifier = default upward slide, "reveal-up" behaviour)
+   ──────────────────────────────────────────────────────────── */
+.reveal {
+  opacity:    0;
+  transform:  translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity:   1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  transform: translateX(-32px);
+}
+
+.reveal-left.visible {
+  transform: translateX(0);
+}
+
+.reveal-right {
+  transform: translateX(32px);
+}
+
+.reveal-right.visible {
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  transform: scale(0.94);
+}
+
+.reveal-scale.visible {
+  transform: scale(1);
+}
+
+/* Respect OS-level "reduce motion" setting — show content
+   immediately with no animation for users who've asked for it */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    transition: none;
+    opacity:    1;
+    transform:  none;
+  }
+}
+
+
+/* ── 18. NAVBAR SCROLL STATE ─────────────────────────────────
+   JS (initNavbarScrollState) adds/removes ".scrolled" on the
+   navbar once the page scrolls past ~40px. This shrinks the
+   navbar slightly and deepens its shadow, giving a subtle
+   sense of motion/depth instead of a navbar that looks the
+   same whether you're at the top or scrolled deep into a page.
+   ──────────────────────────────────────────────────────────── */
+.navbar {
+  transition: height 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.navbar.scrolled {
+  height:     52px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ── 19. BUTTON RIPPLE EFFECT ────────────────────────────────
+   JS (initButtonRipple) injects a <span class="btn-ripple">
+   at the click position inside any .btn. This expands and
+   fades out, giving buttons a satisfying press feedback
+   instead of an instant, static click.
+   ──────────────────────────────────────────────────────────── */
+.btn {
+  position: relative;
+  overflow: hidden; /* keeps the ripple clipped inside the button shape */
+}
+
+.btn-ripple {
+  position:      absolute;
+  border-radius: 50%;
+  background:    rgba(255, 255, 255, 0.35);
+  transform:     scale(0);
+  pointer-events: none;
+  animation:     btn-ripple-expand 0.5s ease-out;
+}
+
+/* Outline buttons get a green-tinted ripple instead of white,
+   since their background is transparent */
+.btn-outline .btn-ripple {
+  background: rgba(57, 255, 20, 0.25);
+}
+
+@keyframes btn-ripple-expand {
+  to {
+    transform: scale(1.6);
+    opacity:   0;
+  }
+}
+
+
+/* ── 20. HAMBURGER → X TRANSITION ────────────────────────────
+   JS toggles ".open" on the hamburger itself (in addition to
+   the nav list) so the three bars can morph into an X instead
+   of just instantly revealing the menu with a static icon.
+   ──────────────────────────────────────────────────────────── */
+.hamburger span {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
