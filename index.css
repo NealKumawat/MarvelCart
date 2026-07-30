@@ -20,18 +20,34 @@
    Full-viewport section. Grid overlay and glow come from
    styles.css via .bg-grid and .glow-spot classes.
    ──────────────────────────────────────────────────────────── */
-.hero {
-  min-height: calc(100vh - 60px); /* 60px = navbar height */
-  display:         flex;
-  flex-direction:  column;
-  justify-content: center;
-  padding:         6rem 2rem 4rem;
+.hero{
+
+    min-height:calc(100vh - 60px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:6rem 5%;
+
 }
 
-.hero-inner {
-  max-width: 1100px;
-  margin:    0 auto;
-  width:     100%;
+.hero-inner{
+
+    max-width:1400px;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
 }
 
 /* Small eyebrow line above the main heading */
